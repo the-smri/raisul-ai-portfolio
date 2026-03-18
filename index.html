@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>S M Raisul Islam | Portfolio</title>
+    <title>Raisul.ai | Smart Dashboard Portfolio</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,453 +16,440 @@
 
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body data-theme="light">
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="#home" class="logo">
-          <img src="/logo.svg" alt="Raisul.ai" class="logo-img" />
-        </a>
-        <div class="nav-links" id="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#research">Research</a>
-          <div class="dropdown">
-            <a href="#content" class="dropbtn">Content <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
-            <div class="dropdown-content glass">
-              <a href="/blog.html">Blog</a>
-            </div>
-          </div>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+    <div class="app-wrapper">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <!-- <img src="/logo.png" alt="Raisul.ai" /> -->
+           <h2>raisul<span style="color: #10b981;">.ai</span></h2>
         </div>
-        <div class="nav-actions">
-          <a href="#contact" class="btn btn-primary btn-pill">Hire Me</a>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <i data-lucide="sun"></i>
-          </button>
-          <button class="menu-toggle" aria-label="Toggle navigation">
-            <i data-lucide="menu"></i>
-          </button>
-        </div>
-      </div>
-    </nav>
+        
+        <nav class="nav-menu">
+          <a href="#home" class="nav-item active">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#about" class="nav-item">
+            <i data-lucide="user"></i>
+            <span>My Story</span>
+          </a>
+          <a href="#skills" class="nav-item">
+            <i data-lucide="zap"></i>
+            <span>Technical Skills</span>
+          </a>
+          <a href="#projects" class="nav-item">
+            <i data-lucide="folder-kanban"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#teaching" class="nav-item">
+            <i data-lucide="graduation-cap"></i>
+            <span>Academy & Ed</span>
+          </a>
+          <a href="#content" class="nav-item">
+            <i data-lucide="video"></i>
+            <span>Media Channel</span>
+          </a>
+          <a href="#contact" class="nav-item">
+            <i data-lucide="mail"></i>
+            <span>Connect</span>
+          </a>
+        </nav>
 
-    <main>
-      <!-- Hero Section -->
-      <section id="home" class="hero section">
-        <div class="hero-container">
-          <div class="hero-left">
-            <div class="welcome-label glass-pill">👋 Welcome to my world</div>
-            <h1 class="hero-title">
-              Teaching Minds.<br/>
-              Building Future<br/>
-              <span class="gradient-text">with AI.</span>
-            </h1>
-            <p class="hero-subtitle">
-              <span id="typing-text"></span><span class="cursor">|</span>
-            </p>
-            <p class="hero-paragraph">
-              Passionate about bridging education and technology — from classrooms to cutting-edge AI.
-            </p>
-            <div class="hero-buttons">
-              <a href="#projects" class="btn btn-primary">Explore My Work</a>
-              <a href="#contact" class="btn btn-outline">Contact Me</a>
-            </div>
-            <div class="hero-social">
-              <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
-              <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-              <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-              <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
-            </div>
-          </div>
-          <div class="hero-right">
-            <div class="blob-wrapper">
-              <div class="gradient-blob"></div>
-              <div class="glass-profile hero-glow-ring">
-                <img src="/images/profile.jpg" alt="Raisul Islam Profile Image" class="profile-img" />
-              </div>
-              <div class="floating-chip chip-1 glass">🎓 Educator</div>
-              <div class="floating-chip chip-2 glass">🤖 AI</div>
-              <div class="floating-chip chip-3 glass">💻 Engineer</div>
-            </div>
-          </div>
+        <div class="sidebar-footer">
+          <!-- Relocated to Header Settings -->
         </div>
-      </section>
+      </aside>
 
-      <!-- About Section -->
-      <section id="about" class="about section" data-reveal="true">
-        <div class="about-container">
-          <div class="about-left" data-reveal="true">
-            <div class="image-frame gradient-border">
-              <img src="/images/profile.jpg" alt="S M Raisul Islam Story Image" class="about-img" />
-            </div>
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+          <div class="search-bar">
+            <i data-lucide="search"></i>
+            <input type="text" placeholder="Search projects, tutorials, research..." />
           </div>
-          <div class="about-right" data-reveal="true">
-            <h2>My Story</h2>
-            <div class="highlight-box glass">
-              <strong>Assistant Vice Principal</strong> &middot; Reaz Public School
-            </div>
-            <p>
-              My journey began in the classroom, teaching Information & Communication Technology and Mathematics. Over the years, I realized that true impact happens at the intersection of pedagogy and technology.
-            </p>
-            <p>
-              As a software engineer and AI enthusiast, I am dedicated to exploring advanced Artificial Intelligence paradigms, optimizing educational pipelines, and building tools that make learning interactive and accessible.
-            </p>
-            
-            <div class="stat-cards">
-              <div class="stat-card glass" data-reveal="true">
-                <h4 class="stat-number">📅 8+</h4>
-                <p>Years Teaching</p>
-              </div>
-              <div class="stat-card glass" data-reveal="true">
-                <h4 class="stat-number">👨‍🎓 1000+</h4>
-                <p>Students Impacted</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="skills section">
-        <div class="section-header center" data-reveal="true">
-          <h2>What I Bring to the Table</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-card glass" data-reveal="true">
-            <div class="skill-icon"><i data-lucide="code"></i></div>
-            <h3>Programming</h3>
-            <div class="skill-tags">
-              <span class="tag">JavaScript</span>
-              <span class="tag">Python</span>
-              <span class="tag">HTML/CSS</span>
-              <span class="tag">Vite</span>
-            </div>
-          </div>
-          <div class="skill-card glass" data-reveal="true">
-            <div class="skill-icon"><i data-lucide="graduation-cap"></i></div>
-            <h3>Teaching</h3>
-            <div class="skill-tags">
-              <span class="tag">Mathematics</span>
-              <span class="tag">ICT</span>
-              <span class="tag">Curriculum Design</span>
-            </div>
-          </div>
-          <div class="skill-card glass" data-reveal="true">
-            <div class="skill-icon"><i data-lucide="brain-circuit"></i></div>
-            <h3>AI/ML</h3>
-            <div class="skill-tags">
-              <span class="tag">Machine Learning</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Data Science</span>
-            </div>
-          </div>
-          <div class="skill-card glass" data-reveal="true">
-            <div class="skill-icon"><i data-lucide="wrench"></i></div>
-            <h3>Tools</h3>
-            <div class="skill-tags">
-              <span class="tag">VS Code</span>
-              <span class="tag">Git</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">Figma</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="projects section">
-        <div class="section-header center" data-reveal="true">
-          <h2>Featured Work</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="project-grid">
-          <!-- Project 1 -->
-          <div class="project-card glass glow-hover" data-reveal="true">
-            <div class="project-img gradient-bg-1"></div>
-            <div class="project-content">
-              <h3>🔬 AI Medical Imaging (In Progress)</h3>
-              <p>Computer vision models designed for sophisticated medical diagnosis and automated radiology insights.</p>
-              <div class="tags">
-                <span class="tag">AI</span>
-                <span class="tag">Healthcare</span>
-              </div>
-              <a href="#" class="view-link">View Project &rarr;</a>
-            </div>
-          </div>
-          <!-- Project 2 -->
-          <div class="project-card glass glow-hover" data-reveal="true">
-            <div class="project-img gradient-bg-2"></div>
-            <div class="project-content">
-              <h3>🔴 Laser Security System</h3>
-              <p>An integrated hardware and software security project demonstrating logic gates and microcontroller alerts.</p>
-              <div class="tags">
-                <span class="tag">Hardware</span>
-                <span class="tag">IoT</span>
-              </div>
-              <a href="#" class="view-link">View Project &rarr;</a>
-            </div>
-          </div>
-          <!-- Project 3 -->
-          <div class="project-card glass glow-hover" data-reveal="true">
-            <div class="project-img gradient-bg-3"></div>
-            <div class="project-content">
-              <h3>📐 Math Teaching Platform</h3>
-              <p>Digital tools crafted specifically for classroom learning, visualizing theorems and algebraic concepts dynamically.</p>
-              <div class="tags">
-                <span class="tag">Education</span>
-                <span class="tag">Web</span>
-              </div>
-              <a href="#" class="view-link">View Project &rarr;</a>
-            </div>
-          </div>
-          <!-- Project 4 -->
-          <div class="project-card glass glow-hover" data-reveal="true">
-            <div class="project-img gradient-bg-4"></div>
-            <div class="project-content">
-              <h3>🌐 Personal Portfolio</h3>
-              <p>A flagship website combining vanilla JavaScript, modern glassmorphism UI, and fluid Framer Motion-style reveals.</p>
-              <div class="tags">
-                <span class="tag">Web</span>
-                <span class="tag">Design</span>
-              </div>
-              <a href="#home" class="view-link">View Project &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Research Interests Section -->
-      <section id="research" class="research section">
-        <div class="section-header center" data-reveal="true">
-          <h2>Where I'm Headed</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="research-grid">
-          <div class="research-card glass glow-border" data-reveal="true">
-            <div class="r-icon gradient-text"><i data-lucide="bot"></i></div>
-            <h3>🤖 AI & Machine Learning</h3>
-            <p>Advancing educational predictive models and personalized tutoring algorithms to scale high-quality teaching.</p>
-          </div>
-          <div class="research-card glass glow-border" data-reveal="true">
-            <div class="r-icon gradient-text"><i data-lucide="scan-face"></i></div>
-            <h3>👁️ Computer Vision</h3>
-            <p>Building real-time detection systems for physical classrooms and spatial interactive analysis.</p>
-          </div>
-          <div class="research-card glass glow-border" data-reveal="true">
-            <div class="r-icon gradient-text"><i data-lucide="activity"></i></div>
-            <h3>🏥 Medical Image Processing</h3>
-            <p>Exploring deep convolutional networks to identify anomalies in diagnostic imagery and X-rays.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Content Creator Section -->
-      <section id="content" class="content section">
-        <div class="section-header center" data-reveal="true">
-          <h2>Beyond the Classroom</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="content-split">
-          <!-- YouTube Column -->
-          <div class="content-col" data-reveal="true">
-            <h3 class="col-title"><i data-lucide="youtube" style="color:#FF0000"></i> YouTube</h3>
-            <div class="media-card glass">
-              <div class="thumbnail">▶</div>
-              <div class="media-info">
-                <h4>Mastering Algebra Fast</h4>
-                <p>12K Views &middot; Mathematics</p>
-              </div>
-            </div>
-            <div class="media-card glass">
-              <div class="thumbnail">▶</div>
-              <div class="media-info">
-                <h4>Why AI will change Schools</h4>
-                <p>8.5K Views &middot; Tech Trend</p>
-              </div>
-            </div>
-          </div>
-          <!-- Blog Column -->
-          <div class="content-col" data-reveal="true">
-            <h3 class="col-title"><i data-lucide="pen-tool" style="color:var(--primary-color)"></i> Blog</h3>
-            <div class="article-card glass">
-              <h4>Building interactive tools for students</h4>
-              <p>March 12, 2026</p>
-              <a href="#">Read More &rarr;</a>
-            </div>
-            <div class="article-card glass">
-              <h4>Understanding Neural Networks</h4>
-              <p>February 28, 2026</p>
-              <a href="#">Read More &rarr;</a>
-            </div>
-          </div>
-        </div>
-        <div class="cta-banner glass" data-reveal="true">
-          <h3>Follow My Journey &rarr;</h3>
-          <div class="banner-buttons">
-            <a href="#" class="btn btn-primary"><i data-lucide="youtube"></i> YouTube</a>
-            <a href="#" class="btn btn-outline"><i data-lucide="book-open"></i> Blog</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience" class="experience section">
-        <div class="section-header center" data-reveal="true">
-          <h2>My Journey</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="timeline-vertical">
-          <div class="timeline-line"></div>
           
-          <div class="timeline-item right" data-reveal="true">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="year">Current</span>
-              <h3>Assistant Vice Principal</h3>
-              <h4>Reaz Public School</h4>
-              <p>Leading educational operations, integrating technology into the modern classroom, and mentoring staff.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item left" data-reveal="true">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="year">Past 8 Years</span>
-              <h3>ICT & Mathematics Teacher</h3>
-              <h4>Reaz Public School</h4>
-              <p>Fostering analytical thinking and foundational programming skills across thousands of young minds.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item right" data-reveal="true">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="year">Ongoing</span>
-              <h3>Content Creator</h3>
-              <h4>YouTube & Blog</h4>
-              <p>Sharing tutorials on math, tech motivation, and programming insights with a growing online community.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item left" data-reveal="true">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass">
-              <span class="year">Ongoing</span>
-              <h3>Self-learning AI/ML</h3>
-              <h4>Online Courses & Research</h4>
-              <p>Constantly upskilling in computer vision and predictive models to bridge the gap between ed-tech and AI capabilities.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials section">
-        <div class="section-header center" data-reveal="true">
-          <h2>Voices of Impact</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="testimonial-grid">
-          <div class="testimonial-card glass" data-reveal="true">
-            <p class="quote">"Raisul sir breaks down complex algorithms unlike anyone else. His teaching methods completely changed my perspective on technology."</p>
-            <div class="author">
-              <div class="avatar"><i data-lucide="user"></i></div>
-              <div class="author-info">
-                <h4>A. Rahman</h4>
-                <span>Former Student</span>
+          <div class="header-actions">
+            <button class="action-btn theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+              <i data-lucide="sun" class="sun-icon"></i>
+              <i data-lucide="moon" class="moon-icon" style="display:none"></i>
+            </button>
+            <button class="action-btn" title="Notifications"><i data-lucide="bell"></i><span style="position:absolute; top:-5px; right:-5px; width:8px; height:8px; background:#ef4444; border-radius:50%; border:2px solid var(--bg-card);"></span></button>
+            <div class="user-profile">
+              <img src="/images/profile.jpg" alt="Raisul" class="user-avatar" />
+              <div style="display:flex; flex-direction:column; margin-right: 0.5rem;">
+                <span class="user-name">S M Raisul Islam</span>
               </div>
             </div>
           </div>
-          <div class="testimonial-card glass" data-reveal="true">
-            <p class="quote">"A visionary educator who seamlessly blends traditional schooling administration with the foresight of a modern software engineer."</p>
-            <div class="author">
-              <div class="avatar"><i data-lucide="user"></i></div>
-              <div class="author-info">
-                <h4>Colleague</h4>
-                <span>Reaz Public School</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </header>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-        <div class="section-header center" data-reveal="true">
-          <h2>Let's Connect</h2>
-          <div class="header-line"></div>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-form-container glass" data-reveal="true">
-            <form class="contact-form">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="John Doe" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="john@example.com" required />
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" placeholder="Project Inquiry" required />
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" placeholder="How can I help you today?" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-full shadow-glow">Send Message</button>
-            </form>
-          </div>
-          <div class="contact-info-panel" data-reveal="true">
-            <div class="info-card glass">
-              <h3>Contact Info</h3>
-              <p>Let's discuss educational technology, AI research, or software development.</p>
-              
-              <div class="info-line">
-                <i data-lucide="map-pin"></i> <span>Dhaka, Bangladesh</span>
-              </div>
-              <div class="info-line">
-                <i data-lucide="mail"></i> <span>contact@raisul.example.com</span>
+        <!-- Hero Section Section -->
+        <section id="home" class="dashboard-section">
+          <div class="card hero-card">
+            <div class="hero-text">
+              <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: #111111;">Software Engineer | Educator | AI Enthusiast</span>
+              <h1>Hello, I’m Raisul</h1>
+              <p style="font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem;">Bridging the gap between <strong>Technical Innovation</strong> and <strong>Educational Excellence</strong> in Bangladesh.</p>
+              <div class="hero-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
+                  <i data-lucide="map-pin" style="color:#10b981; width:18px;"></i>
+                  <span>Dhaka, Bangladesh</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
+                  <i data-lucide="graduation-cap" style="color:#10b981; width:18px;"></i>
+                  <span>Software Engineering Graduate</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
+                  <i data-lucide="target" style="color:#10b981; width:18px;"></i>
+                  <span>Goal: Computer Vision Researcher</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
+                  <i data-lucide="award" style="color:#10b981; width:18px;"></i>
+                  <span>8+ Years in Education</span>
+                </div>
               </div>
               
-              <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Social Links</h4>
-              <div class="social-row">
-                <a href="#" class="social-btn glass"><i data-lucide="youtube"></i></a>
-                <a href="#" class="social-btn glass"><i data-lucide="facebook"></i></a>
-                <a href="#" class="social-btn glass"><i data-lucide="linkedin"></i></a>
-                <a href="#" class="social-btn glass"><i data-lucide="github"></i></a>
+              <div style="display:flex; align-items:center; gap: 1.5rem;">
+                <a href="#contact" class="btn btn-primary" style="text-decoration: none;">Download CV</a>
+                
+                <div class="social-links-hero" style="display:flex; gap: 1rem;">
+                  <a href="#" target="_blank" title="GitHub" style="color: #333;"><i data-lucide="github"></i></a>
+                  <a href="#" target="_blank" title="LinkedIn" style="color: #0077b5;"><i data-lucide="linkedin"></i></a>
+                  <a href="#" target="_blank" title="Facebook" style="color: #1877f2;"><i data-lucide="facebook"></i></a>
+                  <a href="#" target="_blank" title="YouTube" style="color: #ff0000;"><i data-lucide="youtube"></i></a>
+                  <a href="#" target="_blank" title="Instagram" style="color: #e4405f;"><i data-lucide="instagram"></i></a>
+                </div>
               </div>
             </div>
+            <div class="hero-illustration-wrapper">
+              <div class="bg-shape"></div>
+              <img src="/images/profile.jpg" alt="S M Raisul Islam" class="hero-illustration" style="border-radius: 100% ; box-shadow: 0 40px 80px rgba(0,0,0,0.1);" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats Row -->
+        <section class="dashboard-section">
+          <div class="stats-row">
+            <div class="card stat-card">
+              <div class="stat-icon bg-purple"><i data-lucide="users"></i></div>
+              <span class="stat-value">1,200+</span>
+              <span class="stat-label">Students Mentored</span>
+            </div>
+            <div class="card stat-card">
+              <div class="stat-icon bg-blue" style="background:#10b981"><i data-lucide="play-circle"></i></div>
+              <span class="stat-value">150+</span>
+              <span class="stat-label">Video Tutorials</span>
+            </div>
+            <div class="card stat-card">
+              <div class="stat-icon bg-orange"><i data-lucide="code"></i></div>
+              <span class="stat-value">25+</span>
+              <span class="stat-label">Tech Projects</span>
+            </div>
+            <div class="card stat-card">
+              <div class="stat-icon bg-pink"><i data-lucide="book-open"></i></div>
+              <span class="stat-value">PhD</span>
+              <span class="stat-label">Research Target</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+          <!-- Left Column -->
+          <div class="grid-left">
+            <!-- About Section Expansion -->
+            <section id="about" class="dashboard-section">
+              <h2 class="section-title"><i data-lucide="info"></i> My Story & Vision</h2>
+              <div class="card" style="padding: 2rem;">
+                <p style="margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--text-main);">
+                  As the <strong>Assistant Vice Principal</strong> of Reaz Public School, my journey has been a unique blend of high-level educational administration and passionate software engineering. I believe that technology isn't just a tool, but a catalyst for cognitive growth.
+                </p>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                  <div>
+                    <h4 style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="server" style="color:var(--primary); width:16px;"></i> Technical Foundation</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Specializing in Javascript ecosystems and Python-driven AI models. Focused on building tools that simplify complex learning paths.</p>
+                  </div>
+                  <div>
+                    <h4 style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="book-check" style="color:var(--primary); width:16px;"></i> Educational Leadership</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Leading 50+ staff members and 1000+ students towards a digital-first curriculum focusing on Mathematics and ICT.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="dashboard-section">
+              <h2 class="section-title"><i data-lucide="zap"></i> Technical Proficiency</h2>
+              <div class="card">
+                <div class="grid-cols-2" style="display: grid; gap: 2.5rem;">
+                  <div class="skill-category">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">Development</h3>
+                    <div class="skill-item">
+                      <div class="skill-info"><span>JavaScript / Node.js</span><span>92%</span></div>
+                      <div class="progress-bar"><div class="progress-fill" style="width: 92%; background: #10b981;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info"><span>Python (Data & AI)</span><span>78%</span></div>
+                      <div class="progress-bar"><div class="progress-fill" style="width: 78%; background: #3b82f6;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info"><span>React & Vite Stack</span><span>85%</span></div>
+                      <div class="progress-bar"><div class="progress-fill" style="width: 85%; background: #8b5cf6;"></div></div>
+                    </div>
+                  </div>
+                  <div class="skill-category">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">Academics</h3>
+                    <div class="skill-item">
+                      <div class="skill-info"><span>Pure Mathematics</span><span>98%</span></div>
+                      <div class="progress-bar"><div class="progress-fill" style="width: 98%; background: #f59e0b;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info"><span>ICT Pedagogy</span><span>90%</span></div>
+                      <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: #ec4899;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                      <div class="skill-info"><span>AI/ML Fundamentals</span><span>65%</span></div>
+                      <div class="progress-bar"><div class="progress-fill" style="width: 65%; background: #06b6d4;"></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="dashboard-section">
+              <h2 class="section-title"><i data-lucide="folder-kanban"></i> Engineering Portfolio</h2>
+              <div class="grid-cols-2" style="display: grid; gap: 1.5rem;">
+                <!-- Project 1 -->
+                <div class="card project-card-mini">
+                  <div class="project-img-thumb" style="background: linear-gradient(135deg, #10b981, #064e3b);"></div>
+                  <div class="project-info">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                      <span class="project-tag">Web & Design</span>
+                      <span style="font-size:0.7rem; color:var(--text-muted);">2024</span>
+                    </div>
+                    <h3 style="font-size: 1.15rem; margin-top: 0.75rem;">Interactive Dashboard Portfolio</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0; line-height:1.4;">A high-performance personal portfolio leveraging Vite, Vanilla Javascript, and custom CSS animations. Focused on data-driven UI design.</p>
+                    <div style="display:flex; gap:0.5rem; margin-top: 1rem;">
+                      <a href="#" class="btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; border-radius:4px;">Live Preview</a>
+                      <a href="#" style="font-size: 0.75rem; font-weight:600; color:var(--text-muted); padding:0.4rem 0.8rem; border:1px solid var(--border-color); border-radius:4px;">Github</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="card project-card-mini">
+                  <div class="project-img-thumb" style="background: linear-gradient(135deg, #f97316, #ea580c);"></div>
+                  <div class="project-info">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                      <span class="project-tag">Hardware & IoT</span>
+                      <span style="font-size:0.7rem; color:var(--text-muted);">2023</span>
+                    </div>
+                    <h3 style="font-size: 1.15rem; margin-top: 0.75rem;">Laser Security Integration</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0; line-height:1.4;">IoT-based perimeter security using Arduino, laser modules, and a real-time web monitoring dashboard for remote alerts.</p>
+                    <div style="display:flex; gap:0.5rem; margin-top: 1rem;">
+                      <a href="#" class="btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; border-radius:4px; background:#ea580c;">Case Study</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="card project-card-mini">
+                  <div class="project-img-thumb" style="background: linear-gradient(135deg, #3b82f6, #1e40af);"></div>
+                  <div class="project-info">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                      <span class="project-tag">Education Tech</span>
+                      <span style="font-size:0.7rem; color:var(--text-muted);">2024</span>
+                    </div>
+                    <h3 style="font-size: 1.15rem; margin-top: 0.75rem;">Noor Academy Platform</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0; line-height:1.4;">A dedicated e-learning module for Math competitions, featuring automated grading and real-time student leaderboards.</p>
+                  </div>
+                </div>
+                <!-- Project 4 (Future Focus) -->
+                <div class="card project-card-mini" style="border: 2px dashed var(--border-color); background: transparent; box-shadow:none;">
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 2rem;">
+                    <i data-lucide="plus-circle" style="width:48px; height:48px; color:var(--text-muted); margin-bottom:1rem;"></i>
+                    <h4 style="color:var(--text-muted);">Future AI Project</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Researching Computer Vision applications in classroom engagement.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column -->
+          <div class="grid-right">
+            <!-- Teaching & Academy Section -->
+            <section id="teaching" class="dashboard-section">
+              <h2 class="section-title"><i data-lucide="graduation-cap"></i> Academy & Education</h2>
+              <div class="card" style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1rem; margin-bottom: 1.25rem; color: var(--primary);">Academic Excellence</h3>
+                
+                <div style="margin-bottom: 1.5rem; border-left: 3px solid #3b82f6; padding-left: 1rem;">
+                  <h4 style="font-size:0.95rem;">B. Eng. in Software Engineering</h4>
+                  <p style="font-size:0.85rem; font-weight: 600;">Zhengzhou University, China</p>
+                  <p style="font-size:0.8rem; color:var(--text-muted);">2018 - 2023</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem; border-left: 3px solid #f59e0b; padding-left: 1rem;">
+                  <h4 style="font-size:0.95rem;">H.S.C in Science</h4>
+                  <p style="font-size:0.85rem; font-weight: 600;">Dr. Khandaker Mosharraf Hossain College</p>
+                  <p style="font-size:0.8rem; color:var(--text-muted);">2015 - 2017</p>
+                </div>
+
+                <div style="margin-bottom: 0; border-left: 3px solid #10b981; padding-left: 1rem;">
+                  <h4 style="font-size:0.95rem;">S.S.C. in General Science</h4>
+                  <p style="font-size:0.85rem; font-weight: 600;">Shahid Nagar M.A. Jalil High School</p>
+                  <p style="font-size:0.8rem; color:var(--text-muted);">2010 - 2015</p>
+                </div>
+              </div>
+
+              <h2 class="section-title"><i data-lucide="briefcase"></i> Professional Roles</h2>
+              <div class="card">
+                <div style="margin-bottom: 2rem; border-left: 3px solid #10b981; padding-left: 1rem;">
+                  <h4 style="font-size:1rem">Assistant Vice Principal</h4>
+                  <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">Reaz Public School | 2023 - Present</p>
+                  <p style="font-size:0.85rem;">Overseeing administrative operations and spearheading the STEM curriculum integration across secondary grades.</p>
+                </div>
+                <div style="margin-bottom: 2rem; border-left: 3px solid #3b82f6; padding-left: 1rem;">
+                  <h4 style="font-size:1rem">Lead Instructor</h4>
+                  <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">Noor Academy | 2024 - Present</p>
+                  <p style="font-size:0.85rem;">Building a community of logic-driven learners. Developed proprietary "Math-Easy" methodology for competitive exams.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem; border-left: 3px solid #0B3D91; padding-left: 1rem;">
+                  <h4 style="font-size:1rem; display:flex; align-items:center; gap:0.5rem;">Facilitator – NASA ACCP Program <span style="font-size: 0.65rem; background: rgba(11, 61, 145, 0.1); color: #0B3D91; padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(11, 61, 145, 0.2);">NASA Astro Camp</span></h4>
+                 <p style="font-size:0.85rem;">Guided students in NASA-affiliated projects and STEM learning initiatives.</p>
+                  <div style="margin-top: 0.5rem; display:flex; align-items:center; gap:0.4rem;">
+                    <i data-lucide="award" style="width:14px; color:#0B3D91;"></i>
+                    <span style="font-size: 0.75rem; font-weight:700;">EDP Certificate – NASA ACCP (2025)</span>
+                  </div>
+                </div>
+
+                <div style="margin-bottom: 2rem; border-left: 3px solid #FF0000; padding-left: 1rem;">
+                  <h4 style="font-size:1rem">Content Creator</h4>
+                  <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">raisul.ai (YT Channel) | 2020 - Present</p>
+                  <p style="font-size:0.85rem;">Created educational videos on ICT and Mathematics, reaching over 20,000 learners on YouTube.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Community Section -->
+            <section class="dashboard-section">
+              <h2 class="section-title"><i data-lucide="users"></i> Global Community</h2>
+              <div class="card" style="text-align: center; padding: 2rem;">
+                <div style="margin-bottom: 1.5rem;">
+                   <i data-lucide="globe" style="width:40px; height:40px; color:#10b981; margin-bottom:1rem;"></i>
+                   <p style="font-size: 0.9rem; font-weight:600;">Expanding Impact Beyond Borders</p>
+                </div>
+                <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                  <!-- Avatars with descriptive titles -->
+                  <div style="display:flex;">
+                    <img src="/images/profile.jpg" style="width:36px; height:36px; border-radius:50%; border:2px solid white; margin-left: -8px; object-fit:cover;" />
+                    <img src="/images/profile.jpg" style="width:36px; height:36px; border-radius:50%; border:2px solid white; margin-left: -8px; filter: hue-rotate(90deg);" />
+                    <img src="/images/profile.jpg" style="width:36px; height:36px; border-radius:50%; border:2px solid white; margin-left: -8px; filter: saturate(0.5);" />
+                    <div style="width:36px; height:36px; border-radius:50%; background:var(--bg-main); border:1px dashed var(--border-color); margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight:bold;">+1K</div>
+                  </div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">Join the growing list of students from 5+ districts participating in our online bootcamps.</p>
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                  <button class="btn-primary" style="width: 100%;"><i data-lucide="youtube" style="width:14px; vertical-align:middle; margin-right:4px;"></i> YouTube (8k Sub)</button>
+                  <button class="btn" style="width: 100%; background:rgba(0,0,0,0.05); font-size:0.85rem;"><i data-lucide="facebook" style="width:14px; vertical-align:middle; margin-right:4px;"></i> FB Group (2k Join)</button>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
 
-    </main>
+        <!-- Content & Media - Category Selection -->
+        <section id="content" class="dashboard-section">
+          <h2 class="section-title"><i data-lucide="layout"></i> Knowledge Hub & Content</h2>
+          <div class="grid-cols-4" style="display: grid; gap: 1.25rem;">
+             <div class="card" style="padding:1.25rem; border-top: 4px solid #FF0000;">
+                <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="youtube" style="color:#FF0000;"></i> Tech Tutorials</h4>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Programming guides for beginners.</p>
+             </div>
+             <div class="card" style="padding:1.25rem; border-top: 4px solid #1877F2;">
+                <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="facebook" style="color:#1877F2;"></i> Math Mastery</h4>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Short tips and daily calculations.</p>
+             </div>
+             <div class="card" style="padding:1.25rem; border-top: 4px solid #064e3b;">
+                <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="brain-circuit" style="color:#064e3b;"></i> AI Insights</h4>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Latest trends in machine learning.</p>
+             </div>
+             <div class="card" style="padding:1.25rem; border-top: 4px solid #8b5cf6;">
+                <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="mic" style="color:#8b5cf6;"></i> Motivation</h4>
+                <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Career growth & student stories.</p>
+             </div>
+          </div>
+        </section>
 
-    <footer class="footer border-top">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="/logo.svg" alt="Raisul.ai" class="logo-img footer-logo-img" />
-        </div>
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#projects">Work</a>
-          <a href="#content">Content</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <p class="footer-tagline">Teaching Minds. Building Future with AI.</p>
-        <p class="footer-copy">&copy; 2026 S M Raisul Islam. All rights reserved.</p>
-      </div>
-    </footer>
+        <!-- Contact & Footer Expansion -->
+        <section id="contact" class="dashboard-section" style="margin-bottom: 0;">
+           <h2 class="section-title"><i data-lucide="send"></i> Start a Collaboration</h2>
+           <div class="grid-cols-2" style="display:grid; gap: 1.5rem;">
+             <div class="card">
+               <form style="display: flex; flex-direction: column; gap: 1.25rem;">
+                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                   <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                     <label style="font-size: 0.8rem; font-weight: 700; color:var(--text-muted);">Name</label>
+                     <input type="text" placeholder="Raisul Islam" style="padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-size: 0.9rem;" />
+                   </div>
+                   <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                     <label style="font-size: 0.8rem; font-weight: 700; color:var(--text-muted);">Email</label>
+                     <input type="email" placeholder="hello@raisul.ai" style="padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-size: 0.9rem;" />
+                   </div>
+                 </div>
+                 <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                   <label style="font-size: 0.8rem; font-weight: 700; color:var(--text-muted);">Subject</label>
+                   <select style="padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-size: 0.9rem;">
+                     <option>Edu-Tech Inquiry</option>
+                     <option>Software Project</option>
+                     <option>Guest Lecture</option>
+                     <option>Other</option>
+                   </select>
+                 </div>
+                 <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                   <label style="font-size: 0.8rem; font-weight: 700; color:var(--text-muted);">Your Message</label>
+                   <textarea rows="4" placeholder="How can we grow together?" style="padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-family: inherit; resize: none; font-size: 0.9rem;"></textarea>
+                 </div>
+                 <button class="btn-primary" style="padding: 0.8rem;">Transmit Message</button>
+               </form>
+             </div>
+             <div style="display:flex; flex-direction:column; gap:1.5rem;">
+               <div class="card" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+                  <h4 style="margin-bottom: 1rem;">Direct Contact</h4>
+                  <div style="display:flex; flex-direction:column; gap:1rem;">
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                      <div style="width:32px; height:32px; border-radius:50%; background:rgba(16,185,129,0.1); color:#10b981; display:flex; align-items:center; justify-content:center;"><i data-lucide="mail" style="width:16px;"></i></div>
+                      <span style="font-size: 0.9rem;">contact@raisul.ai</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                      <div style="width:32px; height:32px; border-radius:50%; background:rgba(16,185,129,0.1); color:#10b981; display:flex; align-items:center; justify-content:center;"><i data-lucide="linkedin" style="width:16px;"></i></div>
+                      <span style="font-size: 0.9rem;">linkedin.com/in/raisul-ai</span>
+                    </div>
+                  </div>
+               </div>
+               <div class="card" style="background:#064e3b; color:white;">
+                  <h4>Location</h4>
+                  <p style="font-size: 0.85rem; opacity:0.8; margin-top:0.5rem;">Prime Location, Gulshan-1<br/>Dhaka, Bangladesh</p>
+                  <div style="margin-top:1rem; height:80px; width:100%; background:rgba(255,255,255,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="map" style="opacity:0.5;"></i>
+                  </div>
+               </div>
+             </div>
+           </div>
+        </section>
+
+      </main>
+    </div>
 
     <script type="module" src="/main.js"></script>
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+    </script>
   </body>
 </html>
