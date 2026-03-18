@@ -1,4 +1,4 @@
-import { animate, stagger } from "motion";
+import { animate, stagger, inView } from "motion";
 
 // ==========================================================================
 // Theme Toggle Logic
@@ -8,7 +8,6 @@ const body = document.body;
 const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 
-// Check local storage for saved theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 body.setAttribute('data-theme', savedTheme);
 updateThemeIcons(savedTheme);
@@ -32,36 +31,83 @@ if (themeToggle) {
     localStorage.setItem('theme', newTheme);
     updateThemeIcons(newTheme);
     
-    // Smooth transition for dashboard cards
     animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
   });
 }
 
 // ==========================================================================
-// Sidebar & Scroll Logic
+// Advanced Motion Animations
+// ==========================================================================
+
+// 1. Initial Sidebar & Header Entrance
+animate(".sidebar", { x: [-100, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
+animate(".dashboard-header", { y: [-50, 0], opacity: [0, 1] }, { duration: 0.8, delay: 0.2 });
+
+// 2. Scroll-Triggered Section Reveals (Multi-Directional)
+const sectionsList = document.querySelectorAll(".dashboard-section");
+sectionsList.forEach((section, index) => {
+  const isEven = index % 2 === 0;
+  
+  inView(section, ({ target }) => {
+    // Section Title Animation
+    const title = target.querySelector(".section-title");
+    if (title) {
+      animate(title, { x: [isEven ? -50 : 50, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
+    }
+
+    // Main Section Content Reveal
+    animate(
+      target,
+      { 
+        x: [isEven ? -100 : 100, 0], 
+        y: [40, 0], 
+        opacity: [0, 1] 
+      },
+      { duration: 1, easing: [0.17, 0.67, 0.83, 0.67] }
+    );
+
+    // Stagger child cards with extra lift
+    const cards = target.querySelectorAll(".card");
+    if (cards.length > 0) {
+      animate(
+        cards,
+        { y: [30, 0], opacity: [0, 1], scale: [0.9, 1] },
+        { 
+          delay: stagger(0.12, { start: 0.3 }),
+          duration: 0.6,
+          easing: "ease-out"
+        }
+      );
+    }
+  }, { margin: "-100px 0px -100px 0px" });
+});
+
+// 3. Footer Entrance
+inView(".dashboard-footer-main", ({ target }) => {
+  animate(target, { y: [50, 0], opacity: [0, 1] }, { duration: 1, delay: 0.2 });
+});
+
+// 4. Hover Micro-interactions (Programmatic)
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    animate(card, { scale: 1.02, y: -5 }, { duration: 0.3 });
+  });
+  card.addEventListener("mouseleave", () => {
+    animate(card, { scale: 1, y: 0 }, { duration: 0.3 });
+  });
+});
+
+// ==========================================================================
+// Navigation & Core Logic
 // ==========================================================================
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.dashboard-section');
 
-// Active state on click
-navItems.forEach(item => {
-  item.addEventListener('click', (e) => {
-    if (item.id === 'theme-toggle') return;
-    
-    navItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-    
-    // Mobile: Close menu/drawer if implemented (optional)
-  });
-});
-
-// Active state on scroll
 window.addEventListener('scroll', () => {
     let current = "";
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
+        if (window.pageYOffset >= sectionTop - 200) {
             current = section.getAttribute("id");
         }
     });
@@ -74,48 +120,22 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ==========================================================================
-// Initial Animations
-// ==========================================================================
-
-// Animate Sidebar
-animate(".sidebar", { x: [-100, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
-
-// Animate Hero Card
-animate(".hero-card", { y: [50, 0], opacity: [0, 1] }, { duration: 1, easing: "ease-out" });
-
-// Staggered Cards Reveal
-animate(
-  ".card:not(.hero-card)",
-  { y: [30, 0], opacity: [0, 1] },
-  { 
-    delay: stagger(0.1, { start: 0.5 }),
-    duration: 0.6,
-    easing: "ease-out"
-  }
-);
-
-// Animate Progress Bars
+// Animate Progress Bars on View
 const progressFills = document.querySelectorAll('.progress-fill');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const fill = entry.target;
-      const targetWidth = fill.style.width;
-      fill.style.width = '0%';
-      setTimeout(() => {
-        fill.style.width = targetWidth;
-      }, 100);
-      observer.unobserve(fill);
-    }
-  });
-}, { threshold: 0.5 });
-
-progressFills.forEach(fill => observer.observe(fill));
+inView('.progress-bar', ({ target }) => {
+  const fill = target.querySelector('.progress-fill');
+  if (fill) {
+    const targetWidth = fill.style.width;
+    fill.style.width = '0%';
+    setTimeout(() => {
+      fill.style.width = targetWidth;
+    }, 200);
+  }
+});
 
 // Initialize Lucide Icons
 if (window.lucide) {
     window.lucide.createIcons();
 }
 
-console.log("Raisul.ai Dashboard Logic Initialized 🚀");
+console.log("Raisul.ai Advanced Motion System Online 🚀");
