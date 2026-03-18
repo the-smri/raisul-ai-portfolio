@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S M Raisul Islam | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo">
+          <img src="/logo.svg" alt="Raisul.ai" class="logo-img" />
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <div class="dropdown">
+            <a href="#content" class="dropbtn">Content <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
+            <div class="dropdown-content glass">
+              <a href="/blog.html">Blog</a>
+            </div>
+          </div>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-primary btn-pill">Hire Me</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="sun"></i>
+          </button>
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero section">
+        <div class="hero-container">
+          <div class="hero-left">
+            <div class="welcome-label glass-pill">👋 Welcome to my world</div>
+            <h1 class="hero-title">
+              Teaching Minds.<br/>
+              Building Future<br/>
+              <span class="gradient-text">with AI.</span>
+            </h1>
+            <p class="hero-subtitle">
+              <span id="typing-text"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-paragraph">
+              Passionate about bridging education and technology — from classrooms to cutting-edge AI.
+            </p>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">Explore My Work</a>
+              <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-social">
+              <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+              <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+              <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="blob-wrapper">
+              <div class="gradient-blob"></div>
+              <div class="glass-profile hero-glow-ring">
+                <img src="/images/profile.jpg" alt="Raisul Islam Profile Image" class="profile-img" />
+              </div>
+              <div class="floating-chip chip-1 glass">🎓 Educator</div>
+              <div class="floating-chip chip-2 glass">🤖 AI</div>
+              <div class="floating-chip chip-3 glass">💻 Engineer</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about section" data-reveal="true">
+        <div class="about-container">
+          <div class="about-left" data-reveal="true">
+            <div class="image-frame gradient-border">
+              <img src="/images/profile.jpg" alt="S M Raisul Islam Story Image" class="about-img" />
+            </div>
+          </div>
+          <div class="about-right" data-reveal="true">
+            <h2>My Story</h2>
+            <div class="highlight-box glass">
+              <strong>Assistant Vice Principal</strong> &middot; Reaz Public School
+            </div>
+            <p>
+              My journey began in the classroom, teaching Information & Communication Technology and Mathematics. Over the years, I realized that true impact happens at the intersection of pedagogy and technology.
+            </p>
+            <p>
+              As a software engineer and AI enthusiast, I am dedicated to exploring advanced Artificial Intelligence paradigms, optimizing educational pipelines, and building tools that make learning interactive and accessible.
+            </p>
+            
+            <div class="stat-cards">
+              <div class="stat-card glass" data-reveal="true">
+                <h4 class="stat-number">📅 8+</h4>
+                <p>Years Teaching</p>
+              </div>
+              <div class="stat-card glass" data-reveal="true">
+                <h4 class="stat-number">👨‍🎓 1000+</h4>
+                <p>Students Impacted</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills section">
+        <div class="section-header center" data-reveal="true">
+          <h2>What I Bring to the Table</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card glass" data-reveal="true">
+            <div class="skill-icon"><i data-lucide="code"></i></div>
+            <h3>Programming</h3>
+            <div class="skill-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Vite</span>
+            </div>
+          </div>
+          <div class="skill-card glass" data-reveal="true">
+            <div class="skill-icon"><i data-lucide="graduation-cap"></i></div>
+            <h3>Teaching</h3>
+            <div class="skill-tags">
+              <span class="tag">Mathematics</span>
+              <span class="tag">ICT</span>
+              <span class="tag">Curriculum Design</span>
+            </div>
+          </div>
+          <div class="skill-card glass" data-reveal="true">
+            <div class="skill-icon"><i data-lucide="brain-circuit"></i></div>
+            <h3>AI/ML</h3>
+            <div class="skill-tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Data Science</span>
+            </div>
+          </div>
+          <div class="skill-card glass" data-reveal="true">
+            <div class="skill-icon"><i data-lucide="wrench"></i></div>
+            <h3>Tools</h3>
+            <div class="skill-tags">
+              <span class="tag">VS Code</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects section">
+        <div class="section-header center" data-reveal="true">
+          <h2>Featured Work</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card glass glow-hover" data-reveal="true">
+            <div class="project-img gradient-bg-1"></div>
+            <div class="project-content">
+              <h3>🔬 AI Medical Imaging (In Progress)</h3>
+              <p>Computer vision models designed for sophisticated medical diagnosis and automated radiology insights.</p>
+              <div class="tags">
+                <span class="tag">AI</span>
+                <span class="tag">Healthcare</span>
+              </div>
+              <a href="#" class="view-link">View Project &rarr;</a>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card glass glow-hover" data-reveal="true">
+            <div class="project-img gradient-bg-2"></div>
+            <div class="project-content">
+              <h3>🔴 Laser Security System</h3>
+              <p>An integrated hardware and software security project demonstrating logic gates and microcontroller alerts.</p>
+              <div class="tags">
+                <span class="tag">Hardware</span>
+                <span class="tag">IoT</span>
+              </div>
+              <a href="#" class="view-link">View Project &rarr;</a>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card glass glow-hover" data-reveal="true">
+            <div class="project-img gradient-bg-3"></div>
+            <div class="project-content">
+              <h3>📐 Math Teaching Platform</h3>
+              <p>Digital tools crafted specifically for classroom learning, visualizing theorems and algebraic concepts dynamically.</p>
+              <div class="tags">
+                <span class="tag">Education</span>
+                <span class="tag">Web</span>
+              </div>
+              <a href="#" class="view-link">View Project &rarr;</a>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="project-card glass glow-hover" data-reveal="true">
+            <div class="project-img gradient-bg-4"></div>
+            <div class="project-content">
+              <h3>🌐 Personal Portfolio</h3>
+              <p>A flagship website combining vanilla JavaScript, modern glassmorphism UI, and fluid Framer Motion-style reveals.</p>
+              <div class="tags">
+                <span class="tag">Web</span>
+                <span class="tag">Design</span>
+              </div>
+              <a href="#home" class="view-link">View Project &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Interests Section -->
+      <section id="research" class="research section">
+        <div class="section-header center" data-reveal="true">
+          <h2>Where I'm Headed</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="research-grid">
+          <div class="research-card glass glow-border" data-reveal="true">
+            <div class="r-icon gradient-text"><i data-lucide="bot"></i></div>
+            <h3>🤖 AI & Machine Learning</h3>
+            <p>Advancing educational predictive models and personalized tutoring algorithms to scale high-quality teaching.</p>
+          </div>
+          <div class="research-card glass glow-border" data-reveal="true">
+            <div class="r-icon gradient-text"><i data-lucide="scan-face"></i></div>
+            <h3>👁️ Computer Vision</h3>
+            <p>Building real-time detection systems for physical classrooms and spatial interactive analysis.</p>
+          </div>
+          <div class="research-card glass glow-border" data-reveal="true">
+            <div class="r-icon gradient-text"><i data-lucide="activity"></i></div>
+            <h3>🏥 Medical Image Processing</h3>
+            <p>Exploring deep convolutional networks to identify anomalies in diagnostic imagery and X-rays.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Content Creator Section -->
+      <section id="content" class="content section">
+        <div class="section-header center" data-reveal="true">
+          <h2>Beyond the Classroom</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="content-split">
+          <!-- YouTube Column -->
+          <div class="content-col" data-reveal="true">
+            <h3 class="col-title"><i data-lucide="youtube" style="color:#FF0000"></i> YouTube</h3>
+            <div class="media-card glass">
+              <div class="thumbnail">▶</div>
+              <div class="media-info">
+                <h4>Mastering Algebra Fast</h4>
+                <p>12K Views &middot; Mathematics</p>
+              </div>
+            </div>
+            <div class="media-card glass">
+              <div class="thumbnail">▶</div>
+              <div class="media-info">
+                <h4>Why AI will change Schools</h4>
+                <p>8.5K Views &middot; Tech Trend</p>
+              </div>
+            </div>
+          </div>
+          <!-- Blog Column -->
+          <div class="content-col" data-reveal="true">
+            <h3 class="col-title"><i data-lucide="pen-tool" style="color:var(--primary-color)"></i> Blog</h3>
+            <div class="article-card glass">
+              <h4>Building interactive tools for students</h4>
+              <p>March 12, 2026</p>
+              <a href="#">Read More &rarr;</a>
+            </div>
+            <div class="article-card glass">
+              <h4>Understanding Neural Networks</h4>
+              <p>February 28, 2026</p>
+              <a href="#">Read More &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <div class="cta-banner glass" data-reveal="true">
+          <h3>Follow My Journey &rarr;</h3>
+          <div class="banner-buttons">
+            <a href="#" class="btn btn-primary"><i data-lucide="youtube"></i> YouTube</a>
+            <a href="#" class="btn btn-outline"><i data-lucide="book-open"></i> Blog</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="experience section">
+        <div class="section-header center" data-reveal="true">
+          <h2>My Journey</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="timeline-vertical">
+          <div class="timeline-line"></div>
+          
+          <div class="timeline-item right" data-reveal="true">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="year">Current</span>
+              <h3>Assistant Vice Principal</h3>
+              <h4>Reaz Public School</h4>
+              <p>Leading educational operations, integrating technology into the modern classroom, and mentoring staff.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-reveal="true">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="year">Past 8 Years</span>
+              <h3>ICT & Mathematics Teacher</h3>
+              <h4>Reaz Public School</h4>
+              <p>Fostering analytical thinking and foundational programming skills across thousands of young minds.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item right" data-reveal="true">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="year">Ongoing</span>
+              <h3>Content Creator</h3>
+              <h4>YouTube & Blog</h4>
+              <p>Sharing tutorials on math, tech motivation, and programming insights with a growing online community.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item left" data-reveal="true">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="year">Ongoing</span>
+              <h3>Self-learning AI/ML</h3>
+              <h4>Online Courses & Research</h4>
+              <p>Constantly upskilling in computer vision and predictive models to bridge the gap between ed-tech and AI capabilities.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials section">
+        <div class="section-header center" data-reveal="true">
+          <h2>Voices of Impact</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card glass" data-reveal="true">
+            <p class="quote">"Raisul sir breaks down complex algorithms unlike anyone else. His teaching methods completely changed my perspective on technology."</p>
+            <div class="author">
+              <div class="avatar"><i data-lucide="user"></i></div>
+              <div class="author-info">
+                <h4>A. Rahman</h4>
+                <span>Former Student</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card glass" data-reveal="true">
+            <p class="quote">"A visionary educator who seamlessly blends traditional schooling administration with the foresight of a modern software engineer."</p>
+            <div class="author">
+              <div class="avatar"><i data-lucide="user"></i></div>
+              <div class="author-info">
+                <h4>Colleague</h4>
+                <span>Reaz Public School</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <div class="section-header center" data-reveal="true">
+          <h2>Let's Connect</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-form-container glass" data-reveal="true">
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="john@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Project Inquiry" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="How can I help you today?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-full shadow-glow">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info-panel" data-reveal="true">
+            <div class="info-card glass">
+              <h3>Contact Info</h3>
+              <p>Let's discuss educational technology, AI research, or software development.</p>
+              
+              <div class="info-line">
+                <i data-lucide="map-pin"></i> <span>Dhaka, Bangladesh</span>
+              </div>
+              <div class="info-line">
+                <i data-lucide="mail"></i> <span>contact@raisul.example.com</span>
+              </div>
+              
+              <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Social Links</h4>
+              <div class="social-row">
+                <a href="#" class="social-btn glass"><i data-lucide="youtube"></i></a>
+                <a href="#" class="social-btn glass"><i data-lucide="facebook"></i></a>
+                <a href="#" class="social-btn glass"><i data-lucide="linkedin"></i></a>
+                <a href="#" class="social-btn glass"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer border-top">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="/logo.svg" alt="Raisul.ai" class="logo-img footer-logo-img" />
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Work</a>
+          <a href="#content">Content</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <p class="footer-tagline">Teaching Minds. Building Future with AI.</p>
+        <p class="footer-copy">&copy; 2026 S M Raisul Islam. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | S M Raisul Islam</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    
+    <style>
+      /* Blog Specific Styles */
+      .blog-hero {
+        padding-top: 150px;
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .blog-hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+      .blog-hero p {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        padding-bottom: 8rem;
+      }
+      .b-card {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .b-card-img {
+        width: 100%;
+        height: 200px;
+        border-radius: var(--border-radius-sm);
+        background: rgba(255,255,255,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .b-card-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+      .b-card h3 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      .b-card p {
+        color: var(--text-secondary);
+        flex: 1;
+      }
+      .b-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+      }
+      .read-btn {
+        color: var(--primary-color);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .read-btn:hover {
+        color: #fff;
+        transform: translateX(5px);
+      }
+      .ctg-pill {
+        padding: 0.3rem 0.8rem;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid var(--card-border);
+        border-radius: 50px;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="/index.html#home" class="logo">
+          <img src="/logo.png" alt="Raisul.ai" class="logo-img" />
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="/index.html#home">Home</a>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#skills">Skills</a>
+          <a href="/index.html#projects">Projects</a>
+          <a href="/index.html#research">Research</a>
+          <div class="dropdown">
+            <a href="/index.html#content" class="dropbtn">Content <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
+            <div class="dropdown-content glass">
+              <a href="/index.html#content">Overview</a>
+              <a href="/blog.html">Blog</a>
+            </div>
+          </div>
+          <a href="/index.html#experience">Experience</a>
+          <a href="/index.html#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <a href="/index.html#contact" class="btn btn-primary btn-pill">Hire Me</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i data-lucide="sun"></i>
+          </button>
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="section">
+        <div class="blog-hero" data-reveal="true">
+          <h1>Writing & <span class="gradient-text">Thoughts</span></h1>
+          <p>Exploring the intersections of education, predictive modeling, and the future of classroom administration.</p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- Post 1 -->
+          <article class="b-card glass glow-hover" data-reveal="true">
+            <div class="b-card-img">
+              <i data-lucide="book-open" style="width: 48px; height: 48px; color: var(--text-secondary); opacity: 0.5;"></i>
+            </div>
+            <div class="b-card-meta">
+              <span>March 12, 2026</span>
+              <span class="ctg-pill">Education</span>
+            </div>
+            <h3>Building interactive tools for modern students</h3>
+            <p>Generative AI holds incredible pedagogical value when applied correctly. Here is a framework for structuring your tools so they teach, rather than do.</p>
+            <div class="b-card-footer">
+              <span class="read-btn">Read full story &rarr;</span>
+              <i data-lucide="bookmark" style="color: var(--text-secondary); cursor: pointer;"></i>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="b-card glass glow-hover" data-reveal="true">
+            <div class="b-card-img">
+              <i data-lucide="network" style="width: 48px; height: 48px; color: var(--text-secondary); opacity: 0.5;"></i>
+            </div>
+            <div class="b-card-meta">
+              <span>February 28, 2026</span>
+              <span class="ctg-pill">AI/ML</span>
+            </div>
+            <h3>Understanding Neural Networks theoretically</h3>
+            <p>Before writing a single line of Python, it's critical to understand the mathematics behind backpropagation and gradient descent.</p>
+            <div class="b-card-footer">
+              <span class="read-btn">Read full story &rarr;</span>
+              <i data-lucide="bookmark" style="color: var(--text-secondary); cursor: pointer;"></i>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="b-card glass glow-hover" data-reveal="true">
+            <div class="b-card-img">
+              <i data-lucide="camera" style="width: 48px; height: 48px; color: var(--text-secondary); opacity: 0.5;"></i>
+            </div>
+            <div class="b-card-meta">
+              <span>January 15, 2026</span>
+              <span class="ctg-pill">Computer Vision</span>
+            </div>
+            <h3>Medical Image Processing in Node.js</h3>
+            <p>Can you perform lightweight diagnostic imaging analysis entirely in JavaScript? Here is a breakdown of browser-based processing capabilities.</p>
+            <div class="b-card-footer">
+              <span class="read-btn">Read full story &rarr;</span>
+              <i data-lucide="bookmark" style="color: var(--text-secondary); cursor: pointer;"></i>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer border-top">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="/logo.png" alt="Raisul.ai" class="logo-img footer-logo-img" />
+        </div>
+        <div class="footer-links">
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#projects">Work</a>
+          <a href="/index.html#content">Content</a>
+          <a href="/index.html#contact">Contact</a>
+        </div>
+        <p class="footer-tagline">Teaching Minds. Building Future with AI.</p>
+        <p class="footer-copy">&copy; 2026 S M Raisul Islam. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+      // Apply theme on load for blog.html to avoid flash
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+  </body>
+</html>
