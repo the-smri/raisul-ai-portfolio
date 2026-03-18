@@ -178,39 +178,82 @@
             </section>
 
             <!-- Skills Section -->
+            <!-- Skills Section -->
             <section id="skills" class="dashboard-section">
-              <h2 class="section-title"><i data-lucide="zap"></i> Technical Proficiency</h2>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+                <h2 class="section-title" style="margin-bottom:0;"><i data-lucide="zap"></i> Technical Proficiency</h2>
+                <div class="skill-filters" style="display:flex; gap: 0.5rem; background: var(--bg-card); padding: 0.4rem; border-radius: 50px; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft);">
+                  <button class="filter-btn active" data-filter="all">All</button>
+                  <button class="filter-btn" data-filter="programming">Programming</button>
+                  <button class="filter-btn" data-filter="mathematics">Mathematics</button>
+                  <button class="filter-btn" data-filter="ai">AI</button>
+                  <button class="filter-btn" data-filter="ml">ML</button>
+                  <button class="filter-btn" data-filter="tools">Tools</button>
+                </div>
+              </div>
+
               <div class="card">
-                <div class="grid-cols-2" style="display: grid; gap: 2.5rem;">
-                  <div class="skill-category">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">Development</h3>
-                    <div class="skill-item">
-                      <div class="skill-info"><span>JavaScript / Node.js</span><span>92%</span></div>
-                      <div class="progress-bar"><div class="progress-fill" style="width: 92%; background: #10b981;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                      <div class="skill-info"><span>Python (Data & AI)</span><span>78%</span></div>
-                      <div class="progress-bar"><div class="progress-fill" style="width: 78%; background: #3b82f6;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                      <div class="skill-info"><span>React & Vite Stack</span><span>85%</span></div>
-                      <div class="progress-bar"><div class="progress-fill" style="width: 85%; background: #8b5cf6;"></div></div>
-                    </div>
+                <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                  <!-- Programming -->
+                  <div class="skill-item-wrapper" data-category="programming">
+                    <div class="skill-info"><span>C / C++ (High Perf)</span><span>88%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%; background: #004482;"></div></div>
                   </div>
-                  <div class="skill-category">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1rem; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">Academics</h3>
-                    <div class="skill-item">
-                      <div class="skill-info"><span>Pure Mathematics</span><span>98%</span></div>
-                      <div class="progress-bar"><div class="progress-fill" style="width: 98%; background: #f59e0b;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                      <div class="skill-info"><span>ICT Pedagogy</span><span>90%</span></div>
-                      <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: #ec4899;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                      <div class="skill-info"><span>AI/ML Fundamentals</span><span>65%</span></div>
-                      <div class="progress-bar"><div class="progress-fill" style="width: 65%; background: #06b6d4;"></div></div>
-                    </div>
+                  <div class="skill-item-wrapper" data-category="programming">
+                    <div class="skill-info"><span>Python (AI & Data)</span><span>95%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 95%; background: #3776AB;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="programming">
+                    <div class="skill-info"><span>JavaScript / Node.js</span><span>92%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 92%; background: #F7DF1E;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="programming">
+                    <div class="skill-info"><span>HTML5 / CSS3</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: #E34F26;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="programming">
+                    <div class="skill-info"><span>React & Vite Stack</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%; background: #61DAFB;"></div></div>
+                  </div>
+
+                  <!-- Mathematics -->
+                  <div class="skill-item-wrapper" data-category="mathematics">
+                    <div class="skill-info"><span>Pure Mathematics</span><span>98%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 98%; background: #f59e0b;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="mathematics">
+                    <div class="skill-info"><span>Statistics & Bio-Math</span><span>82%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 82%; background: #d97706;"></div></div>
+                  </div>
+
+                  <!-- AI -->
+                  <div class="skill-item-wrapper" data-category="ai">
+                    <div class="skill-info"><span>AI Pedagogy (Astro Camp)</span><span>90%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 90%; background: #10b981;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="ai">
+                    <div class="skill-info"><span>Deep Learning</span><span>75%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 75%; background: #059669;"></div></div>
+                  </div>
+
+                  <!-- ML -->
+                  <div class="skill-item-wrapper" data-category="ml">
+                    <div class="skill-info"><span>ML Fundamentals</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%; background: #3b82f6;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="ml">
+                    <div class="skill-info"><span>NLP & CV</span><span>70%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 70%; background: #2563eb;"></div></div>
+                  </div>
+
+                  <!-- Tools & Others -->
+                  <div class="skill-item-wrapper" data-category="tools">
+                    <div class="skill-info"><span>Git & VCS</span><span>85%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 85%; background: #f05032;"></div></div>
+                  </div>
+                  <div class="skill-item-wrapper" data-category="tools">
+                    <div class="skill-info"><span>VS Code & Docker</span><span>80%</span></div>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 80%; background: #007acc;"></div></div>
                   </div>
                 </div>
               </div>

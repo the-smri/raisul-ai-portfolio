@@ -120,12 +120,61 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Animate Progress Bars on View
-const progressFills = document.querySelectorAll('.progress-fill');
+// ==========================================================================
+// Skill Filtering Logic
+// ==========================================================================
+const filterBtns = document.querySelectorAll('.filter-btn');
+const skillItems = document.querySelectorAll('.skill-item-wrapper');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.getAttribute('data-filter');
+    
+    // Update active button state
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Filter and animate skill items
+    skillItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+      
+      if (filter === 'all' || category === filter) {
+        // Show item
+        item.style.display = 'flex';
+        animate(
+          item, 
+          { opacity: [0, 1], scale: [0.9, 1], y: [20, 0] }, 
+          { duration: 0.4, easing: "ease-out" }
+        );
+        
+        // Re-trigger progress bar animation
+        const fill = item.querySelector('.progress-fill');
+        if (fill) {
+          const targetWidth = fill.getAttribute('data-target-width') || fill.style.width;
+          if (!fill.getAttribute('data-target-width')) {
+            fill.setAttribute('data-target-width', targetWidth);
+          }
+          fill.style.width = '0%';
+          setTimeout(() => {
+            fill.style.width = targetWidth;
+          }, 150);
+        }
+      } else {
+        // Hide item
+        animate(item, { opacity: 0, scale: 0.95, y: 10 }, { duration: 0.2 }).finished.then(() => {
+          item.style.display = 'none';
+        });
+      }
+    });
+  });
+});
+
+// Update the initial progress bar reveal to store the target width
 inView('.progress-bar', ({ target }) => {
   const fill = target.querySelector('.progress-fill');
   if (fill) {
     const targetWidth = fill.style.width;
+    fill.setAttribute('data-target-width', targetWidth);
     fill.style.width = '0%';
     setTimeout(() => {
       fill.style.width = targetWidth;
