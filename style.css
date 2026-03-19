@@ -58,6 +58,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 html {
@@ -109,6 +110,8 @@ img {
     display: flex;
     min-height: 100vh;
     position: relative;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /* Sidebar Styling */
@@ -186,6 +189,8 @@ img {
     padding: 2rem;
     max-width: 1600px;
     margin-right: auto;
+    min-width: 0; /* Important for flex-shrink */
+    width: 100%;
 }
 
 /* Header Area (Search / Actions) */
@@ -509,6 +514,7 @@ img {
         padding: 1.5rem;
     }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
