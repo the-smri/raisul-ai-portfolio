@@ -78,6 +78,15 @@ a {
     color: inherit;
 }
 
+/* Ensure all text elements adapt to dark mode */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+}
+
+p, span, div {
+    color: inherit;
+}
+
 ul {
     list-style: none;
 }
@@ -406,6 +415,7 @@ img {
 .stat-value {
     font-size: 1.75rem;
     font-weight: 800;
+    color: var(--text-main);
 }
 
 .stat-label {
@@ -894,4 +904,181 @@ img {
         grid-column: auto;
         aspect-ratio: 4 / 3;
     }
+}
+
+/* ==========================================================================
+   Dark Mode Fixes - Text Visibility
+   ========================================================================== */
+
+/* Social Links - Adaptive Colors */
+.social-link-github {
+    color: #333;
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .social-link-github {
+    color: #f3f4f6;
+}
+
+.social-link-linkedin {
+    color: #0077b5;
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .social-link-linkedin {
+    color: #60a5fa;
+}
+
+.social-link-facebook {
+    color: #1877f2;
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .social-link-facebook {
+    color: #93c5fd;
+}
+
+.social-link-youtube {
+    color: #ff0000;
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .social-link-youtube {
+    color: #fca5a5;
+}
+
+/* NASA Badge - Adaptive Styling */
+.nasa-badge {
+    font-size: 0.65rem;
+    background: rgba(11, 61, 145, 0.1);
+    color: #0B3D91;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(11, 61, 145, 0.2);
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .nasa-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* NASA Icon - Adaptive Color */
+.nasa-icon {
+    width: 14px;
+    color: #0B3D91;
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .nasa-icon {
+    color: #60a5fa;
+}
+
+/* AI Insights Icon - Adaptive Color */
+.ai-insights-icon {
+    color: #064e3b;
+    transition: var(--transition);
+}
+
+[data-theme='dark'] .ai-insights-icon {
+    color: #10b981;
+}
+
+/* ==========================================================================
+   Comprehensive Dark Mode Text Color Support
+   ========================================================================== */
+
+/* Card Content - All text elements */
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+    color: var(--text-main);
+}
+
+.card p, .card span, .card li, .card strong, .card em {
+    color: var(--text-main);
+}
+
+/* Section Content */
+.dashboard-section h1, .dashboard-section h2, .dashboard-section h3, 
+.dashboard-section h4, .dashboard-section h5, .dashboard-section h6 {
+    color: var(--text-main);
+}
+
+.dashboard-section p, .dashboard-section span, .dashboard-section li {
+    color: var(--text-main);
+}
+
+/* Project Info */
+.project-card-mini h3 {
+    color: var(--text-main);
+}
+
+.project-card-mini p {
+    color: var(--text-muted);
+}
+
+/* Skill Info */
+.skill-info {
+    color: var(--text-main);
+}
+
+.skill-info span {
+    color: var(--text-main);
+}
+
+/* Contact Section */
+#contact h1, #contact h2, #contact h3, #contact h4, #contact h5, #contact h6 {
+    color: var(--text-main);
+}
+
+#contact p, #contact span, #contact label {
+    color: var(--text-main);
+}
+
+#contact input, #contact textarea, #contact select {
+    color: var(--text-main);
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Footer */
+.dashboard-footer-main h1, .dashboard-footer-main h2, .dashboard-footer-main h3, 
+.dashboard-footer-main h4, .dashboard-footer-main h5, .dashboard-footer-main h6 {
+    color: var(--text-main);
+}
+
+.dashboard-footer-main p, .dashboard-footer-main span {
+    color: var(--text-main);
+}
+
+/* About Section */
+.about-card h4 {
+    color: var(--text-main);
+}
+
+.about-card p {
+    color: var(--text-main);
+}
+
+/* Ensure all main content text adapts to theme */
+.main-content {
+    color: var(--text-main);
+}
+
+.main-content * {
+    color: inherit;
+}
+
+/* Override specific overrides for semantic elements */
+.main-content h1, .main-content h2, .main-content h3, 
+.main-content h4, .main-content h5, .main-content h6 {
+    color: var(--text-main);
+}
+
+.main-content p, .main-content span, .main-content li, 
+.main-content strong, .main-content em {
+    color: var(--text-main);
 }
