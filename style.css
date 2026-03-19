@@ -15,12 +15,12 @@
 
     /* Sidebar Gradient - Requested Blue Theme */
     --sidebar-gradient: linear-gradient(180deg, #1A05A2 10%, #4C8CE4 90%);
-    
+
     /* Hero Gradient */
     --hero-gradient: linear-gradient(145deg, #e6f4ff 0%, #fdf4e8 100%);
-    
-    /* Light Mode Tokens */
-    --bg-main: #f0f2f5;
+
+    /* Light Mode Tokens - Green Surface */
+    --bg-main: #22946e;
     --bg-card: #ffffff;
     --bg-sidebar: #ffffff;
     --text-main: #1f2937;
@@ -35,20 +35,32 @@
     --radius-sm: 12px;
     --sidebar-width: 260px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
 }
 
 [data-theme='dark'] {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --bg-sidebar: #1e293b;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.05);
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
-    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
-    --sidebar-gradient: linear-gradient(180deg, #4c1d95 0%, #1e1b4b 100%);
-    --hero-gradient: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    --bg-main: #050816;
+    --bg-card: #0b1220;
+    --bg-sidebar: #050816;
+    --text-main: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.75);
+    --border-color: rgba(255, 255, 255, 0.12);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.7);
+    --primary: #3b82f6;
+    --sidebar-gradient: linear-gradient(180deg, #07152a 0%, #050816 100%);
+    --hero-gradient: linear-gradient(145deg, #0d1f38 0%, #050816 100%);
+}
+
+/* Dark mode layout tweaks */
+[data-theme='dark'] .main-content {
+    background: var(--bg-main);
+}
+
+[data-theme='dark'] .theme-toggle {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: var(--text-main);
 }
 
 /* ==========================================================================
@@ -70,6 +82,7 @@ html, body {
     width: 100%;
     position: relative;
     max-width: 100vw;
+    font-family: var(--font-sans);
 }
 
 a {
@@ -140,6 +153,14 @@ img {
     font-size: 1.5rem;
 }
 
+.sidebar-logo h2 {
+    color: white;
+}
+
+.sidebar-logo h2 span {
+    color: white;
+}
+
 .sidebar-logo img {
     max-width: 160px;
     height: auto;
@@ -162,7 +183,7 @@ img {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 1.5rem;
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     border-radius: var(--radius-md);
     transition: all 0.3s ease;
@@ -172,7 +193,7 @@ img {
 }
 
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     opacity: 1;
     transform: translateX(5px);
 }
@@ -233,6 +254,26 @@ img {
     color: var(--text-muted);
     font-size: 1.25rem;
     transition: var(--transition);
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: var(--text-main);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme='light'] .theme-toggle {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: var(--text-main);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .action-btn:hover {
@@ -460,9 +501,17 @@ img {
 
 .progress-bar {
     height: 8px;
-    background: var(--bg-main);
+    background: rgba(0, 0, 0, 0.08);
     border-radius: 4px;
     overflow: hidden;
+}
+
+[data-theme='dark'] .progress-bar {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme='dark'] .progress-fill {
+    background: var(--primary) !important;
 }
 
 .progress-fill {
@@ -786,7 +835,7 @@ img {
 }
 
 [data-theme='dark'] .skill-item-wrapper {
-    background: rgba(255,255,255,0.02);
+    background: rgba(0,0,0,0.1);
 }
 
 .skill-item-wrapper[data-category="programming"] { border-left-color: var(--accent-blue); }
