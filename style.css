@@ -602,6 +602,35 @@ img {
     .stat-value {
         font-size: 1.25rem;
     }
+
+    .card {
+        padding: 1.25rem !important;
+    }
+    
+    .about-card {
+        padding: 1.25rem !important;
+    }
+
+    .about-grid, .contact-inputs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .skill-filters {
+        border-radius: 12px !important;
+        justify-content: center;
+        gap: 0.25rem !important;
+    }
+    
+    .filter-btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
 }
 
 @media (max-width: 480px) {
