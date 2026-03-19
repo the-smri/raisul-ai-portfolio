@@ -70,7 +70,14 @@ body {
     color: var(--text-main);
     line-height: 1.5;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 a {
@@ -597,6 +604,18 @@ img {
     .stats-row {
         grid-template-columns: 1fr;
     }
+    .hero-highlights-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+.hero-highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 /* Chart/Graph Placeholder Styles */
