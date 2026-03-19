@@ -730,10 +730,13 @@ img {
 
 @media (max-width: 480px) {
     .stats-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     .hero-highlights-grid {
         grid-template-columns: 1fr !important;
+    }
+    .hero-card {
+        background: #000000 !important;
     }
 }
 
