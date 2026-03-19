@@ -19,11 +19,11 @@ updateThemeIcons(savedTheme);
 
 function updateThemeIcons(theme) {
   if (theme === 'dark') {
-    if (sunIcon) sunIcon.style.display = 'none';
-    if (moonIcon) moonIcon.style.display = 'block';
-  } else {
     if (sunIcon) sunIcon.style.display = 'block';
     if (moonIcon) moonIcon.style.display = 'none';
+  } else {
+    if (sunIcon) sunIcon.style.display = 'none';
+    if (moonIcon) moonIcon.style.display = 'block';
   }
 }
 
@@ -132,6 +132,14 @@ window.addEventListener('scroll', () => {
 // ==========================================================================
 const filterBtns = document.querySelectorAll('.filter-btn');
 const skillItems = document.querySelectorAll('.skill-item-wrapper');
+
+// Set Programming filter as default on page load
+window.addEventListener('load', () => {
+  const programmingBtn = document.querySelector('.filter-btn[data-filter="programming"]');
+  if (programmingBtn) {
+    programmingBtn.click();
+  }
+});
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {

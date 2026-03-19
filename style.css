@@ -267,6 +267,15 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.22);
     color: var(--text-main);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 [data-theme='light'] .theme-toggle {
@@ -274,6 +283,15 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.12);
     color: var(--text-main);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Location Card Styling */
+.location-card {
+    background: #064e3b;
+}
+
+[data-theme='dark'] .location-card {
+    background: var(--bg-card);
 }
 
 .action-btn:hover {
