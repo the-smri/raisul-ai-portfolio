@@ -15,6 +15,15 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <link rel="stylesheet" href="./style.css" />
+
+    <!-- Import Map for Static Module Support -->
+    <script type="importmap">
+      {
+        "imports": {
+          "motion": "https://cdn.jsdelivr.net/npm/motion@12.38.0/+esm"
+        }
+      }
+    </script>
   </head>
   <body data-theme="light">
 
@@ -86,7 +95,7 @@
           <div class="card hero-card">
             <div class="hero-text">
               <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: #111111;">Software Engineer | Educator | AI Enthusiast</span>
-              <h1>Hello, I’m Raisul</h1>
+              <h1> Hello, I'm Raisul </h1>
               <p style="font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem;">Bridging the gap between <strong>Technical Innovation</strong> and <strong>Educational Excellence</strong> in Bangladesh.</p>
               <div class="hero-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
                 <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
@@ -497,7 +506,7 @@
     </main>
   </div>
 
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="./main.js"></script>
     <script>
       // Initialize Lucide Icons
       lucide.createIcons();

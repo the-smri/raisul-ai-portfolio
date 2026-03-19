@@ -8,7 +8,12 @@ const body = document.body;
 const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 
-const savedTheme = localStorage.getItem('theme') || 'light';
+let savedTheme = 'light';
+try {
+  savedTheme = localStorage.getItem('theme') || 'light';
+} catch (e) {
+  console.warn("localStorage not available, defaulting to light theme.");
+}
 body.setAttribute('data-theme', savedTheme);
 updateThemeIcons(savedTheme);
 
@@ -28,7 +33,9 @@ if (themeToggle) {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
     body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    try {
+      localStorage.setItem('theme', newTheme);
+    } catch (e) {}
     updateThemeIcons(newTheme);
     
     animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
