@@ -1,45 +1,65 @@
 import { animate, stagger, inView } from "motion";
 
 // ==========================================================================
+// CV Download Function
+// ==========================================================================
+function downloadCV() {
+  const link = document.createElement('a');
+  link.href = './public/CV_SM_Raisul_Islam.pdf';
+  link.download = 'CV_SM_Raisul_Islam.pdf';
+  link.target = '_blank';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Make function globally available
+window.downloadCV = downloadCV;
+
+// ==========================================================================
 // Theme Toggle Logic
 // ==========================================================================
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-const sunIcon = document.querySelector('.sun-icon');
-const moonIcon = document.querySelector('.moon-icon');
+let themeToggle, body, sunIcon, moonIcon, savedTheme;
 
-let savedTheme = 'light';
-try {
-  savedTheme = localStorage.getItem('theme') || 'light';
-} catch (e) {
-  console.warn("localStorage not available, defaulting to light theme.");
-}
-body.setAttribute('data-theme', savedTheme);
-updateThemeIcons(savedTheme);
+function initializeThemeToggle() {
+  themeToggle = document.getElementById('theme-toggle');
+  body = document.body;
+  sunIcon = document.querySelector('.sun-icon');
+  moonIcon = document.querySelector('.moon-icon');
 
-function updateThemeIcons(theme) {
-  if (theme === 'dark') {
-    if (sunIcon) sunIcon.style.display = 'block';
-    if (moonIcon) moonIcon.style.display = 'none';
-  } else {
-    if (sunIcon) sunIcon.style.display = 'none';
-    if (moonIcon) moonIcon.style.display = 'block';
+  savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('theme') || 'light';
+  } catch (e) {
+    console.warn("localStorage not available, defaulting to light theme.");
+  }
+  body.setAttribute('data-theme', savedTheme);
+  updateThemeIcons(savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      body.setAttribute('data-theme', newTheme);
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch (e) {}
+      updateThemeIcons(newTheme);
+
+      animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
+    });
   }
 }
 
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    body.setAttribute('data-theme', newTheme);
-    try {
-      localStorage.setItem('theme', newTheme);
-    } catch (e) {}
-    updateThemeIcons(newTheme);
-    
-    animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
-  });
+function updateThemeIcons(theme) {
+  if (theme === 'dark') {
+    if (sunIcon) sunIcon.style.display = 'none';
+    if (moonIcon) moonIcon.style.display = 'block';
+  } else {
+    if (sunIcon) sunIcon.style.display = 'block';
+    if (moonIcon) moonIcon.style.display = 'none';
+  }
 }
 
 // ==========================================================================
@@ -200,6 +220,8 @@ inView('.progress-bar', ({ target }) => {
 // Initialize Lucide Icons
 if (window.lucide) {
     window.lucide.createIcons();
+    // Initialize theme toggle after icons are created
+    initializeThemeToggle();
 }
 
 console.log("Raisul.ai Advanced Motion System Online 🚀");
