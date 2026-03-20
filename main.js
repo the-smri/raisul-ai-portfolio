@@ -66,61 +66,61 @@ function updateThemeIcons(theme) {
 // Advanced Motion Animations
 // ==========================================================================
 
-// 1. Initial Sidebar & Header Entrance
+// 1. Initial Entrances
 animate(".sidebar", { x: [-100, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
 animate(".dashboard-header", { y: [-50, 0], opacity: [0, 1] }, { duration: 0.8, delay: 0.2 });
 
-// 2. Scroll-Triggered Section Reveals (Multi-Directional)
-const sectionsList = document.querySelectorAll(".dashboard-section");
-sectionsList.forEach((section, index) => {
-  const isEven = index % 2 === 0;
-  
-  inView(section, ({ target }) => {
-    // Section Title Animation
-    const title = target.querySelector(".section-title");
-    if (title) {
-      animate(title, { x: [isEven ? -50 : 50, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
-    }
-
-    // Main Section Content Reveal
-    animate(
-      target,
-      { 
-        x: [isEven ? -100 : 100, 0], 
-        y: [40, 0], 
-        opacity: [0, 1] 
-      },
-      { duration: 1, easing: [0.17, 0.67, 0.83, 0.67] }
-    );
-
-    // Stagger child cards with extra lift
-    const cards = target.querySelectorAll(".card");
-    if (cards.length > 0) {
-      animate(
-        cards,
-        { y: [30, 0], opacity: [0, 1], scale: [0.9, 1] },
-        { 
-          delay: stagger(0.12, { start: 0.3 }),
-          duration: 0.6,
-          easing: "ease-out"
-        }
-      );
-    }
-  }, { margin: "-100px 0px -100px 0px" });
+// Hero Section Staggered Entrance
+inView("#home", ({ target }) => {
+  animate(".hero-badge", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.1 });
+  animate(".hero-text h1", { opacity: [0, 1], x: [-30, 0] }, { duration: 0.8, delay: 0.2 });
+  animate(".hero-text p", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.4 });
+  animate(".hero-highlights > div", { opacity: [0, 1], x: [-20, 0] }, { duration: 0.5, delay: stagger(0.1, { start: 0.5 }) });
+  animate(".hero-text .btn-primary", { opacity: [0, 1], scale: [0.8, 1] }, { duration: 0.5, delay: 0.8 });
+  animate(".social-links-hero a", { opacity: [0, 1], y: [20, 0] }, { duration: 0.4, delay: stagger(0.1, { start: 0.9 }) });
+  animate(".hero-illustration-wrapper", { opacity: [0, 1], scale: [0.8, 1], rotate: [-10, 0] }, { duration: 1, delay: 0.3 });
 });
+
+// 2. Scroll-Triggered Generic Reveals
+const scrollAnimate = (selector, keyframes, options) => {
+  const elements = document.querySelectorAll(selector);
+  
+  elements.forEach((el) => {
+    el.style.opacity = "0"; // Hide perfectly to await animation
+    el.dataset.animated = "false";
+  });
+
+  const checkScroll = () => {
+    const triggerBottom = window.innerHeight * 0.95;
+    elements.forEach((el) => {
+      if (el.dataset.animated === "true") return;
+      const box = el.getBoundingClientRect();
+      if (box.top < triggerBottom && box.bottom > 0) {
+        el.dataset.animated = "true";
+        animate(el, keyframes, options);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", checkScroll, { passive: true });
+  setTimeout(checkScroll, 100); // Check on load
+};
+
+scrollAnimate(".section-title", { opacity: [0, 1], x: [-30, 0] }, { duration: 0.8, easing: "ease-out" });
+scrollAnimate(".card:not(.hero-card)", { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, easing: "ease-out" });
+scrollAnimate(".gallery-item", { opacity: [0, 1], scale: [0.9, 1] }, { duration: 0.8, easing: "ease-out" });
+scrollAnimate(".about-grid div, .stat-value, .stat-label", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, easing: "ease-out" });
 
 // 3. Footer Entrance
-inView(".dashboard-footer-main", ({ target }) => {
-  animate(target, { y: [50, 0], opacity: [0, 1] }, { duration: 1, delay: 0.2 });
-});
+scrollAnimate(".dashboard-footer-main", { y: [50, 0], opacity: [0, 1] }, { duration: 0.8 });
 
 // 4. Hover Micro-interactions (Programmatic)
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("mouseenter", () => {
-    animate(card, { scale: 1.02, y: -5 }, { duration: 0.3 });
+document.querySelectorAll(".card:not(.hero-card), .gallery-item").forEach(element => {
+  element.addEventListener("mouseenter", () => {
+    animate(element, { scale: 1.02, y: -5 }, { duration: 0.3 });
   });
-  card.addEventListener("mouseleave", () => {
-    animate(card, { scale: 1, y: 0 }, { duration: 0.3 });
+  element.addEventListener("mouseleave", () => {
+    animate(element, { scale: 1, y: 0 }, { duration: 0.3 });
   });
 });
 
