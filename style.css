@@ -970,11 +970,11 @@ img {
 
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
     .gallery-item.large {
-        grid-column: auto;
+        grid-column: 1 / 3;
         aspect-ratio: 4 / 3;
     }
 }
