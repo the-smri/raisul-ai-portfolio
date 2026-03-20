@@ -49,7 +49,7 @@
     --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.7);
     --primary: #3b82f6;
     --sidebar-gradient: linear-gradient(180deg, #07152a 0%, #050816 100%);
-    --hero-gradient: linear-gradient(145deg, #0d1f38 0%, #050816 100%);
+    --hero-gradient: #000000;
 }
 
 /* Dark mode layout tweaks */
@@ -592,21 +592,21 @@ img {
         top: auto;
         left: 0;
         width: 100%;
-        height: 70px;
+        height: 60px;
         flex-direction: row;
         padding: 0;
         justify-content: space-around;
         align-items: center;
-        background: rgba(26, 5, 162, 0.8); /* Requested One BG Color */
+        background: var(--bg-card);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid var(--border-color);
         border-radius: 20px 20px 0 0;
         box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
     }
     
     [data-theme='dark'] .sidebar {
-        background: rgba(30, 27, 75, 0.8);
+        background: var(--bg-card);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
@@ -625,11 +625,10 @@ img {
         font-size: 0.65rem;
         min-width: 0;
         flex: 1;
+        color: var(--text-main);
     }
     .nav-item span {
-        display: block;
-        font-size: 0.6rem;
-        opacity: 0.8;
+        display: none;
     }
     .nav-item i {
         width: 24px;
@@ -674,6 +673,9 @@ img {
         gap: 1.5rem; 
         padding: 1.5rem 0.75rem;
         overflow: hidden; /* Prevent background shapes from leaking */
+    }
+    .hero-card::before, .hero-card .bg-shape {
+        display: none !important;
     }
     .hero-text h1 {
         font-size: 2rem;
@@ -736,7 +738,7 @@ img {
         grid-template-columns: 1fr !important;
     }
     .hero-card {
-        background: linear-gradient(145deg, var(--bg-card) 0%, #000000 100%) !important;
+        background: var(--bg-card) !important;
     }
 }
 
@@ -981,39 +983,39 @@ img {
    ========================================================================== */
 
 /* Social Links - Adaptive Colors */
-.social-link-github {
+.social-links-hero .social-link-github {
     color: #333;
     transition: var(--transition);
 }
 
-[data-theme='dark'] .social-link-github {
+[data-theme='dark'] .social-links-hero .social-link-github {
     color: #f3f4f6;
 }
 
-.social-link-linkedin {
+.social-links-hero .social-link-linkedin {
     color: #0077b5;
     transition: var(--transition);
 }
 
-[data-theme='dark'] .social-link-linkedin {
+[data-theme='dark'] .social-links-hero .social-link-linkedin {
     color: #60a5fa;
 }
 
-.social-link-facebook {
+.social-links-hero .social-link-facebook {
     color: #1877f2;
     transition: var(--transition);
 }
 
-[data-theme='dark'] .social-link-facebook {
+[data-theme='dark'] .social-links-hero .social-link-facebook {
     color: #93c5fd;
 }
 
-.social-link-youtube {
+.social-links-hero .social-link-youtube {
     color: #ff0000;
     transition: var(--transition);
 }
 
-[data-theme='dark'] .social-link-youtube {
+[data-theme='dark'] .social-links-hero .social-link-youtube {
     color: #fca5a5;
 }
 
