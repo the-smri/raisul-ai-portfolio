@@ -81,38 +81,42 @@ inView("#home", ({ target }) => {
   animate(".hero-illustration-wrapper", { opacity: [0, 1], scale: [0.8, 1], rotate: [-10, 0] }, { duration: 1, delay: 0.3 });
 });
 
-// 2. Scroll-Triggered Generic Reveals
-const scrollAnimate = (selector, keyframes, options) => {
+// 2. Scroll-Triggered Native Reveals (Slide & Zoom)
+const addScrollAnimation = (selector, initialStyle, keyframes) => {
   const elements = document.querySelectorAll(selector);
   
   elements.forEach((el) => {
-    el.style.opacity = "0"; // Hide perfectly to await animation
+    Object.assign(el.style, initialStyle);
     el.dataset.animated = "false";
   });
 
   const checkScroll = () => {
-    const triggerBottom = window.innerHeight * 0.95;
+    const triggerBottom = window.innerHeight * 0.90;
     elements.forEach((el) => {
       if (el.dataset.animated === "true") return;
       const box = el.getBoundingClientRect();
       if (box.top < triggerBottom && box.bottom > 0) {
         el.dataset.animated = "true";
-        animate(el, keyframes, options);
+        animate(el, keyframes, { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] });
       }
     });
   };
 
   window.addEventListener("scroll", checkScroll, { passive: true });
-  setTimeout(checkScroll, 100); // Check on load
+  setTimeout(checkScroll, 100);
 };
 
-scrollAnimate(".section-title", { opacity: [0, 1], x: [-30, 0] }, { duration: 0.8, easing: "ease-out" });
-scrollAnimate(".card:not(.hero-card)", { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, easing: "ease-out" });
-scrollAnimate(".gallery-item", { opacity: [0, 1], scale: [0.9, 1] }, { duration: 0.8, easing: "ease-out" });
-scrollAnimate(".about-grid div, .stat-value, .stat-label", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, easing: "ease-out" });
+// 1. Headings come from left
+addScrollAnimation(".section-title", { opacity: "0", transform: "translateX(-50px)" }, { opacity: [0, 1], x: [-50, 0] });
 
-// 3. Footer Entrance
-scrollAnimate(".dashboard-footer-main", { y: [50, 0], opacity: [0, 1] }, { duration: 0.8 });
+// 2. Cards zoom in
+addScrollAnimation(".card:not(.hero-card), .gallery-item", { opacity: "0", transform: "scale(0.8)" }, { opacity: [0, 1], scale: [0.8, 1] });
+
+// 3. Texts come from right
+addScrollAnimation(".about-grid div, .stat-value, .stat-label", { opacity: "0", transform: "translateX(50px)" }, { opacity: [0, 1], x: [50, 0] });
+
+// 4. Footer Entrance
+addScrollAnimation(".dashboard-footer-main", { opacity: "0", transform: "translateY(50px)" }, { opacity: [0, 1], y: [50, 0] });
 
 // 4. Hover Micro-interactions (Programmatic)
 document.querySelectorAll(".card:not(.hero-card), .gallery-item").forEach(element => {
