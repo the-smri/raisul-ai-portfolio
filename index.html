@@ -72,13 +72,25 @@
 
       <!-- Main Content Area -->
       <main class="main-content">
-        <!-- Dashboard Header -->
+        <!-- Header -->
+        <style>
+          @media (max-width: 850px) {
+            .top-nav-links { display: none !important; }
+          }
+          .top-nav-links a:hover { color: var(--primary) !important; }
+        </style>
         <header class="dashboard-header">
           <div class="search-bar">
-            <i data-lucide="search"></i>
-            <input type="text" placeholder="Search projects, tutorials, research..." />
+            <i data-lucide="search" style="color: var(--text-muted)"></i>
+            <input type="text" placeholder="Search insights, algorithms, or resources...">
           </div>
           
+          <div class="top-nav-links" style="display: flex; gap: 1.5rem; align-items: center; margin-left: auto; margin-right: 2rem;">
+            <a href="/index.html#home" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Home</a>
+            <a href="/blog.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Blog</a>
+            <a href="/tutorials.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Tutorials</a>
+          </div>
+
           <div class="header-actions">
             <button class="action-btn theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
               <i data-lucide="sun" class="sun-icon"></i>
