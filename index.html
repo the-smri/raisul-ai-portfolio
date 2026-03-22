@@ -74,10 +74,22 @@
       <main class="main-content">
         <!-- Header -->
         <style>
-          @media (max-width: 850px) {
-            .top-nav-links { display: none !important; }
-          }
           .top-nav-links a:hover { color: var(--primary) !important; }
+          @media (max-width: 850px) {
+            .dashboard-header { flex-wrap: wrap !important; }
+            .search-bar { order: 1; flex: 1; }
+            .header-actions { order: 2; }
+            .top-nav-links {
+              display: flex !important;
+              order: 3;
+              width: 100%;
+              justify-content: center;
+              margin: 1rem 0 0 0 !important;
+              padding-top: 1rem;
+              border-top: 1px solid var(--border-color);
+            }
+            .top-nav-links a { font-size: 0.85rem !important; }
+          }
         </style>
         <header class="dashboard-header">
           <div class="search-bar">
