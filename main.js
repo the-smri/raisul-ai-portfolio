@@ -1,4 +1,4 @@
-import { animate, stagger, inView } from "motion";
+import { animate, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 
 // ==========================================================================
 // CV Download Function
@@ -47,7 +47,9 @@ function initializeThemeToggle() {
       } catch (e) {}
       updateThemeIcons(newTheme);
 
-      animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
+      if (document.querySelector(".card")) animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
+      if (document.querySelector(".b-card")) animate(".b-card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
+      if (document.querySelector(".v-card")) animate(".v-card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
     });
   }
 }
@@ -67,19 +69,25 @@ function updateThemeIcons(theme) {
 // ==========================================================================
 
 // 1. Initial Entrances
-animate(".sidebar", { x: [-100, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
-animate(".dashboard-header", { y: [-50, 0], opacity: [0, 1] }, { duration: 0.8, delay: 0.2 });
+if (document.querySelector(".sidebar")) {
+  animate(".sidebar", { x: [-100, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
+}
+if (document.querySelector(".dashboard-header")) {
+  animate(".dashboard-header", { y: [-50, 0], opacity: [0, 1] }, { duration: 0.8, delay: 0.2 });
+}
 
 // Hero Section Staggered Entrance
-inView("#home", ({ target }) => {
-  animate(".hero-badge", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.1 });
-  animate(".hero-text h1", { opacity: [0, 1], x: [-30, 0] }, { duration: 0.8, delay: 0.2 });
-  animate(".hero-text p", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.4 });
-  animate(".hero-highlights > div", { opacity: [0, 1], x: [-20, 0] }, { duration: 0.5, delay: stagger(0.1, { start: 0.5 }) });
-  animate(".hero-text .btn-primary", { opacity: [0, 1], scale: [0.8, 1] }, { duration: 0.5, delay: 0.8 });
-  animate(".social-links-hero a", { opacity: [0, 1], y: [20, 0] }, { duration: 0.4, delay: stagger(0.1, { start: 0.9 }) });
-  animate(".hero-illustration-wrapper", { opacity: [0, 1], scale: [0.8, 1], rotate: [-10, 0] }, { duration: 1, delay: 0.3 });
-});
+if (document.querySelector("#home")) {
+  inView("#home", ({ target }) => {
+    animate(".hero-badge", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.1 });
+    animate(".hero-text h1", { opacity: [0, 1], x: [-30, 0] }, { duration: 0.8, delay: 0.2 });
+    animate(".hero-text p", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.4 });
+    animate(".hero-highlights > div", { opacity: [0, 1], x: [-20, 0] }, { duration: 0.5, delay: stagger(0.1, { start: 0.5 }) });
+    animate(".hero-text .btn-primary", { opacity: [0, 1], scale: [0.8, 1] }, { duration: 0.5, delay: 0.8 });
+    animate(".social-links-hero a", { opacity: [0, 1], y: [20, 0] }, { duration: 0.4, delay: stagger(0.1, { start: 0.9 }) });
+    animate(".hero-illustration-wrapper", { opacity: [0, 1], scale: [0.8, 1], rotate: [-10, 0] }, { duration: 1, delay: 0.3 });
+  });
+}
 
 // 2. Scroll-Triggered Native Reveals (Slide & Zoom)
 const addScrollAnimation = (selector, initialStyle, keyframes) => {
@@ -209,17 +217,19 @@ filterBtns.forEach(btn => {
 });
 
 // Update the initial progress bar reveal to store the target width
-inView('.progress-bar', ({ target }) => {
-  const fill = target.querySelector('.progress-fill');
-  if (fill) {
-    const targetWidth = fill.style.width;
-    fill.setAttribute('data-target-width', targetWidth);
-    fill.style.width = '0%';
-    setTimeout(() => {
-      fill.style.width = targetWidth;
-    }, 200);
-  }
-});
+if (document.querySelector('.progress-bar')) {
+  inView('.progress-bar', ({ target }) => {
+    const fill = target.querySelector('.progress-fill');
+    if (fill) {
+      const targetWidth = fill.style.width;
+      fill.setAttribute('data-target-width', targetWidth);
+      fill.style.width = '0%';
+      setTimeout(() => {
+        fill.style.width = targetWidth;
+      }, 200);
+    }
+  });
+}
 
 // Initialize Lucide Icons
 if (window.lucide) {
