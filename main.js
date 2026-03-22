@@ -165,6 +165,13 @@ window.addEventListener('scroll', () => {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const skillItems = document.querySelectorAll('.skill-item-wrapper');
 
+// Pre-initialize data-target-width for all progress bars
+document.querySelectorAll('.progress-fill').forEach(fill => {
+  if (!fill.getAttribute('data-target-width')) {
+    fill.setAttribute('data-target-width', fill.style.width);
+  }
+});
+
 // Set Programming filter as default on page load
 window.addEventListener('load', () => {
   const programmingBtn = document.querySelector('.filter-btn[data-filter="programming"]');
@@ -188,6 +195,7 @@ filterBtns.forEach(btn => {
       if (filter === 'all' || category === filter) {
         // Show item
         item.style.display = 'flex';
+        item.dataset.hiding = 'false';
         animate(
           item, 
           { opacity: [0, 1], scale: [0.9, 1], y: [20, 0] }, 
@@ -197,10 +205,7 @@ filterBtns.forEach(btn => {
         // Re-trigger progress bar animation
         const fill = item.querySelector('.progress-fill');
         if (fill) {
-          const targetWidth = fill.getAttribute('data-target-width') || fill.style.width;
-          if (!fill.getAttribute('data-target-width')) {
-            fill.setAttribute('data-target-width', targetWidth);
-          }
+          const targetWidth = fill.getAttribute('data-target-width');
           fill.style.width = '0%';
           setTimeout(() => {
             fill.style.width = targetWidth;
@@ -208,9 +213,13 @@ filterBtns.forEach(btn => {
         }
       } else {
         // Hide item
-        animate(item, { opacity: 0, scale: 0.95, y: 10 }, { duration: 0.2 }).finished.then(() => {
-          item.style.display = 'none';
-        });
+        item.dataset.hiding = 'true';
+        animate(item, { opacity: 0, scale: 0.95, y: 10 }, { duration: 0.2 });
+        setTimeout(() => {
+          if (item.dataset.hiding === 'true') {
+            item.style.display = 'none';
+          }
+        }, 200);
       }
     });
   });
@@ -221,8 +230,10 @@ if (document.querySelector('.progress-bar')) {
   inView('.progress-bar', ({ target }) => {
     const fill = target.querySelector('.progress-fill');
     if (fill) {
-      const targetWidth = fill.style.width;
-      fill.setAttribute('data-target-width', targetWidth);
+      if (!fill.getAttribute('data-target-width')) {
+        fill.setAttribute('data-target-width', fill.style.width);
+      }
+      const targetWidth = fill.getAttribute('data-target-width');
       fill.style.width = '0%';
       setTimeout(() => {
         fill.style.width = targetWidth;

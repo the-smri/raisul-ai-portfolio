@@ -50,7 +50,7 @@
     --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.7);
     --primary: #3b82f6;
     --sidebar-gradient: linear-gradient(180deg, #07152a 0%, #050816 100%);
-    --hero-gradient: #000000;
+    --hero-gradient: var(--bg-card);
 }
 
 /* Dark mode layout tweaks */
