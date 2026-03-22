@@ -383,7 +383,7 @@
              <!-- Content & Media - Category Selection -->
         <section id="content" class="dashboard-section">
           <h2 class="section-title"><i data-lucide="layout"></i> Knowledge Hub & Content</h2>
-          <div class="grid-cols-4" style="display: grid; gap: 1.25rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
              <div class="card" style="padding:1.25rem; border-top: 4px solid #FF0000;">
                 <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="youtube" style="color:#FF0000;"></i> Tech Tutorials</h4>
                 <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Programming guides for beginners.</p>
@@ -400,6 +400,12 @@
                 <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="mic" style="color:#8b5cf6;"></i> Motivation</h4>
                 <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Career growth & student stories.</p>
              </div>
+             <a href="./blog.html" style="text-decoration: none; display: block; height: 100%;">
+                <div class="card" style="padding:1.25rem; border-top: 4px solid #f97316; height: 100%;">
+                   <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="book-open" style="color:#f97316;"></i> Blog</h4>
+                   <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Complete articles & guides.</p>
+                </div>
+             </a>
           </div>
 
           <!-- Digital Photo Gallery -->
