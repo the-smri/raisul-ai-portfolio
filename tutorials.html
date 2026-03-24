@@ -20,12 +20,17 @@
       /* Navbar & General Layout Styles */
       .navbar {
         position: fixed;
-        top: 0; left: 0; width: 100%;
+        top: 0; left: 0; right: 0;
+        width: calc(100% - 2rem);
+        max-width: 1200px;
+        margin: 1rem auto;
         background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         z-index: 1000;
-        border-bottom: 1px solid var(--border-color);
+        border: 1px solid var(--border-color);
+        border-radius: 50px;
+        box-shadow: var(--shadow-soft);
       }
       [data-theme='dark'] .navbar {
         background: rgba(11, 18, 32, 0.9);
@@ -106,23 +111,20 @@
         display: none;
         color: var(--text-main);
       }
+      .mobile-only-avatar {
+        display: none !important;
+      }
       @media (max-width: 860px) {
-        .nav-container { flex-wrap: wrap; }
-        .logo { order: 1; margin-right: auto; }
-        .nav-actions { order: 2; }
-        .nav-actions .btn-pill { display: none; }
-        .menu-toggle { display: none; }
-        .nav-links {
-          display: flex !important;
-          order: 3;
-          width: 100%;
-          justify-content: center;
-          margin-top: 1rem;
-          padding-top: 0.75rem;
-          border-top: 1px solid var(--border-color);
+        .nav-container { 
+          padding: 0.65rem 1rem; 
+          flex-wrap: nowrap;
         }
-        .top-nav-links { margin: 0 !important; gap: 1.25rem !important; justify-content: center; width: 100%; }
-        .top-nav-links a { font-size: 0.85rem !important; }
+        .logo { display: none !important; }
+        .nav-links { display: none !important; }
+        .menu-toggle { display: none !important; }
+        .nav-actions .btn-pill { display: none !important; }
+        .nav-actions { gap: 0.5rem; margin-left: auto; }
+        .mobile-only-avatar { display: flex !important; }
       }
 
       /* Footer Styles */
@@ -397,6 +399,18 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
       <div class="nav-container">
+        <!-- Brand logo and new inline links on mobile -->
+        <div class="top-nav-brand">
+          <a href="/index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="./public/images/logo-mobile.png" alt="raisul.ai logo" style="width: 44px; height: 44px; object-fit: contain; border-radius: 0;" class="mobile-brand-logo" />
+          </a>
+          <nav class="mobile-top-links">
+            <a href="/index.html">Home</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+          </nav>
+        </div>
+
         <a href="/index.html" class="logo" style="font-weight: 800; font-size: 1.4rem; color: var(--text-main); text-decoration: none;">
           raisul<span style="color: var(--primary);">.ai</span>
         </a>
@@ -414,6 +428,9 @@
             <i data-lucide="sun" class="sun-icon"></i>
             <i data-lucide="moon" class="moon-icon" style="display:none"></i>
           </button>
+          <div class="user-profile mobile-only-avatar" style="padding: 4px;">
+            <img src="./public/images/profile.jpg" alt="Raisul" class="user-avatar" style="width: 36px; height: 36px; border-radius: 50%;" />
+          </div>
           <button class="menu-toggle" aria-label="Toggle navigation">
             <i data-lucide="menu"></i>
           </button>
