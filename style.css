@@ -397,7 +397,6 @@ img {
     display: flex;
     align-items: center;
     gap: 0.25em;
-    border-left: 4px solid var(--primary); /* Requested left bar line */
     padding-left: 1rem;
 }
 
