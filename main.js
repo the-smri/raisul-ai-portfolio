@@ -142,6 +142,16 @@ document.querySelectorAll(".card:not(.hero-card), .gallery-item").forEach(elemen
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.dashboard-section');
 
+// Mobile bottom nav items and their section mappings
+const mobNavMap = {
+  'mob-home': 'home',
+  'mob-skills': 'skills',
+  'mob-education': 'teaching',
+  'mob-content': 'content',
+  'mob-hire': 'contact',
+};
+const mobNavItems = document.querySelectorAll('.mob-nav-item');
+
 window.addEventListener('scroll', () => {
     let current = "";
     sections.forEach((section) => {
@@ -151,13 +161,23 @@ window.addEventListener('scroll', () => {
         }
     });
 
+    // Update desktop sidebar active
     navItems.forEach((item) => {
         item.classList.remove("active");
         if (item.getAttribute("href") === `#${current}`) {
             item.classList.add("active");
         }
     });
-});
+
+    // Update mobile bottom nav active
+    mobNavItems.forEach((item) => {
+        item.classList.remove("active");
+        const sectionId = mobNavMap[item.id];
+        if (sectionId === current) {
+            item.classList.add("active");
+        }
+    });
+}, { passive: true });
 
 // ==========================================================================
 // Skill Filtering Logic

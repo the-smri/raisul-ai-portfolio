@@ -644,17 +644,9 @@ img {
         padding-bottom: 90px;
     }
     .dashboard-header { 
-        padding-top: 2.5rem;
         flex-direction: row !important; 
         gap: 0.5rem; 
         align-items: center !important; 
-    }
-    .search-bar {
-        flex: 1;
-        min-width: 0;
-    }
-    .search-bar input {
-        font-size: 0.8rem;
     }
     .header-actions {
         gap: 0.5rem;
@@ -1154,3 +1146,281 @@ img {
 .main-content strong, .main-content em {
     color: var(--text-main);
 }
+
+/* ==========================================================================
+   Sticky Header
+   ========================================================================== */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
+}
+
+.top-nav-brand {
+    display: none; /* hidden on desktop */
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+/* Hire Me Button – Navbar */
+.btn-hire-nav {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white !important;
+    padding: 0.45rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.88rem !important;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    transition: var(--transition);
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.btn-hire-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Hero CTA Row */
+.hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Hire Me Button – Hero */
+.btn-hire-hero {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white !important;
+    padding: 0.85rem 2rem !important;
+    border-radius: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45) !important;
+    transition: var(--transition) !important;
+    text-decoration: none !important;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-hire-hero:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.55) !important;
+}
+
+/* Outline Download CV Button */
+.btn-outline-hero {
+    background: transparent;
+    color: var(--text-main) !important;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-outline-hero:hover {
+    border-color: var(--primary);
+    color: var(--primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+}
+
+/* ==========================================================================
+   Mobile Bottom Navigation – 5 items with labels & hover effects
+   ========================================================================== */
+.mobile-bottom-nav {
+    display: none; /* hidden on desktop, shown via media query */
+}
+
+@media (max-width: 768px) {
+    /* Hide the desktop sidebar nav on mobile */
+    .sidebar > .nav-menu {
+        display: none !important;
+    }
+
+    /* Show the dedicated mobile bottom nav */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 68px;
+        z-index: 1100;
+        background: var(--bg-card);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border-color);
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -6px 24px rgba(0,0,0,0.12);
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 0.25rem;
+    }
+
+    [data-theme='dark'] .mobile-bottom-nav {
+        background: rgba(11, 18, 32, 0.97);
+        border-top: 1px solid rgba(255,255,255,0.07);
+        box-shadow: 0 -6px 30px rgba(0,0,0,0.5);
+    }
+
+    .mob-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        flex: 1;
+        padding: 0.4rem 0.2rem 0.6rem;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        min-width: 0;
+        border-radius: 14px;
+        cursor: pointer;
+    }
+
+    .mob-nav-item i {
+        width: 22px;
+        height: 22px;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        flex-shrink: 0;
+    }
+
+    .mob-nav-item span {
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+        transition: color 0.25s ease;
+        display: block !important;
+        color: inherit;
+    }
+
+    /* Hover effect – lift + color */
+    .mob-nav-item:hover {
+        color: var(--primary);
+        transform: translateY(-5px);
+    }
+
+    .mob-nav-item:hover i {
+        transform: scale(1.2);
+    }
+
+    /* Active state */
+    .mob-nav-item.active {
+        color: var(--primary);
+    }
+
+    /* Active indicator dot */
+    .mob-nav-item.active::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--primary);
+    }
+
+    /* Hire Me item – accent color */
+    .mob-nav-hire {
+        color: #10b981 !important;
+    }
+
+    .mob-nav-hire i {
+        color: #10b981 !important;
+    }
+
+    .mob-nav-hire span {
+        color: #10b981 !important;
+        font-weight: 700;
+    }
+
+    .mob-nav-hire:hover {
+        color: #059669 !important;
+        transform: translateY(-6px);
+    }
+
+    /* Hide old sidebar on mobile */
+    .sidebar {
+        display: none !important;
+    }
+
+    /* BUT always show mobile-bottom-nav regardless */
+    .mobile-bottom-nav {
+        display: flex !important;
+    }
+
+    /* Sticky header adjustments on mobile */
+    .sticky-header {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        padding: 0.65rem 1rem;
+    }
+
+    .top-nav-links {
+        display: none !important; /* hide Home/Blog/Tutorials links on mobile */
+    }
+
+    .top-nav-brand {
+        display: flex !important; /* show raisul.ai brand only on mobile */
+    }
+
+    /* Padding for fixed navbar */
+    .main-content {
+        padding-bottom: 90px !important;
+    }
+
+    /* Hero CTA on mobile */
+    .hero-cta-row {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn-hire-hero,
+    .btn-outline-hero {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mob-nav-item span {
+        font-size: 0.58rem;
+    }
+
+    .mob-nav-item i {
+        width: 20px;
+        height: 20px;
+    }
+}
+

@@ -70,37 +70,46 @@
         </div>
       </aside>
 
+      <!-- Mobile Bottom Navigation (5 items) - outside sidebar so it's always visible -->
+      <nav class="mobile-bottom-nav">
+        <a href="#home" class="mob-nav-item active" id="mob-home">
+          <i data-lucide="home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#skills" class="mob-nav-item" id="mob-skills">
+          <i data-lucide="zap"></i>
+          <span>Skills</span>
+        </a>
+        <a href="#teaching" class="mob-nav-item" id="mob-education">
+          <i data-lucide="graduation-cap"></i>
+          <span>Education</span>
+        </a>
+        <a href="#content" class="mob-nav-item" id="mob-content">
+          <i data-lucide="video"></i>
+          <span>Content</span>
+        </a>
+        <a href="#contact" class="mob-nav-item mob-nav-hire" id="mob-hire">
+          <i data-lucide="briefcase"></i>
+          <span>Hire Me</span>
+        </a>
+      </nav>
+
       <!-- Main Content Area -->
       <main class="main-content">
         <!-- Header -->
         <style>
           .top-nav-links a:hover { color: var(--primary) !important; }
-          @media (max-width: 850px) {
-            .dashboard-header { flex-wrap: wrap !important; }
-            .search-bar { order: 1; flex: 1; }
-            .header-actions { order: 2; }
-            .top-nav-links {
-              display: flex !important;
-              order: 3;
-              width: 100%;
-              justify-content: center;
-              margin: 1rem 0 0 0 !important;
-              padding-top: 1rem;
-              border-top: 1px solid var(--border-color);
-            }
-            .top-nav-links a { font-size: 0.85rem !important; }
-          }
         </style>
-        <header class="dashboard-header">
-          <div class="search-bar">
-            <i data-lucide="search" style="color: var(--text-muted)"></i>
-            <input type="text" placeholder="Search insights, algorithms, or resources...">
+        <header class="dashboard-header sticky-header">
+          <div class="top-nav-brand">
+            <span class="brand-logo">raisul<span style="color: var(--primary);">.ai</span></span>
           </div>
-          
+
           <div class="top-nav-links" style="display: flex; gap: 1.5rem; align-items: center; margin-left: auto; margin-right: 2rem;">
             <a href="/index.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Home</a>
             <a href="/blog.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Blog</a>
             <a href="/tutorials.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Tutorials</a>
+            <a href="#contact" class="btn btn-hire-nav" style="font-weight: 700; font-size: 0.9rem;">Hire Me</a>
           </div>
 
           <div class="header-actions">
@@ -114,21 +123,22 @@
           </div>
         </header>
 
-        <!-- Hero Section Section -->
+        <!-- Hero Section -->
         <section id="home" class="dashboard-section">
           <div class="card hero-card">
             <div class="hero-text">
               <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--text-main);">Software Engineer | Educator | AI Enthusiast</span>
-              <h1> Hello, I'm Raisul </h1>
-              <p style="font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem;">Bridging the gap between <strong>Technical Innovation</strong> and <strong>Educational Excellence</strong> in Bangladesh.</p>
-              <div class="hero-highlights hero-highlights-grid" style="margin-bottom: 2.5rem;">
+              <h1>Hi, I'm Raisul Islam</h1>
+              <p class="hero-intro" style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.75rem; line-height: 1.7;">I build <strong>AI-powered tools</strong>, teach <strong>500+ students</strong>, and create content that makes technology accessible — all from Bangladesh.</p>
+              <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">Software Engineering graduate from Zhengzhou University · NASA ACCP Facilitator · YouTube Educator · Aspiring Computer Vision Researcher.</p>
+              <div class="hero-highlights hero-highlights-grid" style="margin-bottom: 2rem;">
                 <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
                   <i data-lucide="map-pin" style="color:#10b981; width:18px;"></i>
                   <span>Cumilla, Bangladesh</span>
                 </div>
                 <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
                   <i data-lucide="graduation-cap" style="color:#10b981; width:18px;"></i>
-                  <span>Software Engineering Graduate</span>
+                  <span>B.Eng Software Engineering</span>
                 </div>
                 <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
                   <i data-lucide="target" style="color:#10b981; width:18px;"></i>
@@ -140,9 +150,9 @@
                 </div>
               </div>
               
-              <div style="display:flex; align-items:center; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
-                <button onclick="downloadCV()" class="btn btn-primary" style="text-decoration: none;">Download CV</button>
-                
+              <div class="hero-cta-row">
+                <a href="#contact" class="btn btn-primary btn-hire-hero">🚀 Hire Me</a>
+                <button onclick="downloadCV()" class="btn btn-outline-hero">Download CV</button>
                 <div class="social-links-hero" style="display:flex; gap: 1rem;">
                   <a href="https://github.com/the-smri" target="_blank" title="GitHub" class="social-link-github"><i data-lucide="github"></i></a>
                   <a href="https://www.linkedin.com/in/the-raisul/" target="_blank" title="LinkedIn" class="social-link-linkedin"><i data-lucide="linkedin"></i></a>
@@ -153,7 +163,7 @@
             </div>
             <div class="hero-illustration-wrapper">
               <div class="bg-shape"></div>
-              <img src="./public/images/profile.jpg" alt="S M Raisul Islam" class="hero-illustration" style="border-radius: 100% ; box-shadow: 0 40px 80px rgba(0,0,0,0.1);" />
+              <img src="./public/images/profile.jpg" alt="S M Raisul Islam" class="hero-illustration" style="border-radius: 100%; box-shadow: 0 40px 80px rgba(0,0,0,0.1);" />
             </div>
           </div>
         </section>
@@ -506,7 +516,7 @@
         </div>
 
         <!-- Contact & Footer Expansion -->
-        <section id="contact" class="dashboard-section" style="margin-bottom: 0;">
+        <section id="contact" class="dashboard-section" style="margin-bottom: 0;" data-hire-me="true">
            <h2 class="section-title"><i data-lucide="send"></i> Start a Collaboration</h2>
            <div class="grid-cols-2" style="display:grid; gap: 1.5rem;">
              <div class="card">
