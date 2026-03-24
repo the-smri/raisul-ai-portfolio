@@ -524,10 +524,21 @@ img {
 .card-orange { background: #fff7ed; }
 .card-pink { background: #fdf2f8; }
 
+/* Dark Mode Overrides */
+[data-theme='dark'] .card-purple { background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.2); }
+[data-theme='dark'] .card-green { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.2); }
+[data-theme='dark'] .card-orange { background: rgba(249, 115, 22, 0.08); border-color: rgba(249, 115, 22, 0.2); }
+[data-theme='dark'] .card-pink { background: rgba(236, 72, 153, 0.08); border-color: rgba(236, 72, 153, 0.2); }
+
 .card-purple:hover { background: #ede9fe; border-color: #8b5cf6; transform: translateY(-5px); }
 .card-green:hover { background: #dcfce7; border-color: #10b981; transform: translateY(-5px); }
 .card-orange:hover { background: #ffedd5; border-color: #f97316; transform: translateY(-5px); }
 .card-pink:hover { background: #fce7f3; border-color: #ec4899; transform: translateY(-5px); }
+
+[data-theme='dark'] .card-purple:hover { background: rgba(139, 92, 246, 0.15); border-color: #8b5cf6; }
+[data-theme='dark'] .card-green:hover { background: rgba(16, 185, 129, 0.15); border-color: #10b981; }
+[data-theme='dark'] .card-orange:hover { background: rgba(249, 115, 22, 0.15); border-color: #f97316; }
+[data-theme='dark'] .card-pink:hover { background: rgba(236, 72, 153, 0.15); border-color: #ec4899; }
 
 .stat-icon {
     width: 60px;
