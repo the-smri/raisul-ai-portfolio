@@ -96,22 +96,32 @@
 
       <!-- Main Content Area -->
       <main class="main-content">
-        <!-- Header -->
         <style>
           .top-nav-links a:hover { color: var(--primary) !important; }
         </style>
         <header class="dashboard-header sticky-header">
+
+          <!-- Brand logo: only shown on mobile -->
           <div class="top-nav-brand">
-            <span class="brand-logo">raisul<span style="color: var(--primary);">.ai</span></span>
+            <a href="/index.html" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="./logo.png" alt="raisul.ai logo" class="mobile-brand-logo" />
+            </a>
+            <nav class="mobile-top-links">
+              <a href="/index.html">Home</a>
+              <a href="/blog.html">Blog</a>
+              <a href="/tutorials.html">Tutorials</a>
+            </nav>
           </div>
 
-          <div class="top-nav-links" style="display: flex; gap: 1.5rem; align-items: center; margin-left: auto; margin-right: 2rem;">
-            <a href="/index.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Home</a>
-            <a href="/blog.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Blog</a>
-            <a href="/tutorials.html" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-decoration: none; transition: color 0.2s;">Tutorials</a>
-            <a href="#contact" class="btn btn-hire-nav" style="font-weight: 700; font-size: 0.9rem;">Hire Me</a>
-          </div>
+          <!-- Desktop nav links: hidden on mobile -->
+          <nav class="top-nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="#contact" class="btn-hire-nav">Hire Me</a>
+          </nav>
 
+          <!-- Theme toggle + avatar: always visible -->
           <div class="header-actions">
             <button class="action-btn theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
               <i data-lucide="sun" class="sun-icon"></i>

@@ -1148,27 +1148,37 @@ img {
 }
 
 /* ==========================================================================
-   Sticky Header
+   Sticky Header – complete reset
    ========================================================================== */
 .sticky-header {
     position: sticky;
     top: 0;
     z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* top-nav-links has margin-right:auto to push actions right */
+    gap: 1rem;
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    padding: 0.75rem 2rem;
     margin-bottom: 1rem;
+    /* Pull header edge-to-edge within main-content */
     margin-left: -2rem;
     margin-right: -2rem;
     width: calc(100% + 4rem);
+    max-width: none;
+    /* Override dashboard-header's justify-content */
+    margin-bottom: 0;
 }
 
+/* Brand logo: hidden on desktop, visible on mobile */
 .top-nav-brand {
-    display: none; /* hidden on desktop */
+    display: none;
     align-items: center;
+    margin-right: auto; /* push all other items to the right */
 }
 
 .brand-logo {
@@ -1176,15 +1186,39 @@ img {
     font-weight: 800;
     color: var(--text-main);
     letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 
-/* Hire Me Button – Navbar */
+/* Desktop nav links */
+.top-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: auto; /* push header-actions to the far right */
+    list-style: none;
+}
+
+.top-nav-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.top-nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Hire Me Button inside nav */
 .btn-hire-nav {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #10b981, #059669) !important;
     color: white !important;
-    padding: 0.45rem 1.25rem;
-    border-radius: 50px;
+    padding: 0.45rem 1.25rem !important;
+    border-radius: 50px !important;
     font-size: 0.88rem !important;
+    font-weight: 700 !important;
     box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
     transition: var(--transition);
     text-decoration: none !important;
@@ -1193,8 +1227,8 @@ img {
 
 .btn-hire-nav:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
-    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5) !important;
+    background: linear-gradient(135deg, #059669, #047857) !important;
 }
 
 /* Hero CTA Row */
@@ -1378,20 +1412,55 @@ img {
         display: flex !important;
     }
 
-    /* Sticky header adjustments on mobile */
+    /* Sticky header on mobile: floating curved rectangle */
     .sticky-header {
-        margin-left: -1rem;
-        margin-right: -1rem;
-        width: calc(100% + 2rem);
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         padding: 0.65rem 1rem;
+        border-radius: 50px;
+        top: 1rem; /* Creates gap at the top */
+        margin-bottom: 2rem; /* Creates gap with the bottom section */
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-soft);
     }
 
+    /* Hide Home/Blog/Tutorials on mobile */
     .top-nav-links {
-        display: none !important; /* hide Home/Blog/Tutorials links on mobile */
+        display: none !important;
     }
 
+    /* Show brand logo and new inline links on mobile */
     .top-nav-brand {
-        display: flex !important; /* show raisul.ai brand only on mobile */
+        display: flex !important;
+        align-items: center;
+        gap: 0.75rem;
+        margin-right: auto;
+    }
+
+    .mobile-brand-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .mobile-top-links {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .mobile-top-links a {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-main);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .mobile-top-links a:hover {
+        color: var(--primary);
     }
 
     /* Padding for fixed navbar */
