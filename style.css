@@ -389,13 +389,48 @@ img {
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 800;
-    background: linear-gradient(to right, #c026d3, #2563eb, #10b981, #06b6d4, #c026d3);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    border-left: 4px solid var(--primary); /* Requested left bar line */
+    padding-left: 1rem;
+}
+
+.hero-text h1 .highlight {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid var(--primary); /* Blinking cursor bar */
+    background: linear-gradient(to right, #1aae9f, #2b8ede, #5878d6, #8a7c9f, #c4765d, #ef7a22);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-style: normal;
+    animation: typing-name-anim 5s steps(30, end) infinite, blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes typing-name-anim {
+    0%, 15% { width: 0; }
+    70%, 85% { width: 100%; }
+    95%, 100% { width: 0; }
+}
+
+@keyframes blink-cursor {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary); }
+}
+
+.hero-text h1 .highlight {
+    background: linear-gradient(to right, #1aae9f, #2b8ede, #5878d6, #8a7c9f, #c4765d, #ef7a22);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: normal;
 }
 
 .hero-text p {
@@ -478,19 +513,35 @@ img {
 .stat-card {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
+/* Card Background Themes */
+.card-purple { background: #f5f3ff; }
+.card-green { background: #f0fdf4; }
+.card-orange { background: #fff7ed; }
+.card-pink { background: #fdf2f8; }
+
+.card-purple:hover { background: #ede9fe; border-color: #8b5cf6; transform: translateY(-5px); }
+.card-green:hover { background: #dcfce7; border-color: #10b981; transform: translateY(-5px); }
+.card-orange:hover { background: #ffedd5; border-color: #f97316; transform: translateY(-5px); }
+.card-pink:hover { background: #fce7f3; border-color: #ec4899; transform: translateY(-5px); }
+
 .stat-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-sm);
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.5rem;
-    color: white !important;
-    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    transition: var(--transition);
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1);
 }
 
 .stat-value {
@@ -512,6 +563,8 @@ img {
 .bg-pink { background: #ec4899; }
 .bg-cyan { background: #06b6d4; }
 
+.icon-pink { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+
 /* Grid Sections */
 .dashboard-section {
     margin-bottom: 2.5rem;
@@ -531,6 +584,11 @@ img {
     margin-bottom: 1.5rem;
 }
 
+/* Skills Indicators */
+.skill-item-wrapper {
+    margin-bottom: 1.5rem;
+}
+
 .skill-info {
     display: flex;
     justify-content: space-between;
@@ -538,6 +596,18 @@ img {
     font-weight: 600;
     font-size: 0.9rem;
 }
+
+.skill-icon-box {
+    display: none; /* Hide if still in HTML temporarily */
+}
+
+/* Color Themes for Icons (Used in Stats) */
+.icon-blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.icon-green { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.icon-orange { background: rgba(249, 115, 22, 0.1); color: #f97316; }
+.icon-purple { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.icon-yellow { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.icon-pink { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
 
 .progress-bar {
     height: 8px;
