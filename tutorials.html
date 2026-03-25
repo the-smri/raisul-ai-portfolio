@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.447.0"></script>
 
     <link rel="stylesheet" href="./style.css" />
     
@@ -43,9 +43,43 @@
         justify-content: space-between;
         align-items: center;
       }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: var(--text-main);
+        text-decoration: none;
+      }
+      .section-title i,
+      .section-title svg {
+        color: #10b981 !important;
+      }
+      .desktop-logo {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+      }
       .logo-img {
         height: 36px;
         width: auto;
+      }
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .footer-logo h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+      .footer-logo img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
       }
       .nav-links {
         display: flex;
@@ -411,7 +445,8 @@
           </nav>
         </div>
 
-        <a href="/index.html" class="logo" style="font-weight: 800; font-size: 1.4rem; color: var(--text-main); text-decoration: none;">
+        <a href="/index.html" class="logo">
+          <img src="./public/images/logo-mobile.png" class="desktop-logo" alt="Logo">
           raisul<span style="color: var(--primary);">.ai</span>
         </a>
         <div class="nav-links" id="nav-links">
@@ -602,7 +637,9 @@
     <footer class="footer border-top">
       <div class="footer-container">
         <div class="footer-logo">
-          <p style="font-weight: 800; font-size: 1.5rem; color: var(--text-main);">raisul<span style="color: var(--primary);">.ai</span></p>
+          <i data-lucide="arrow-up" style="width:20px; height:20px; color:#10b981;"></i>
+          <img src="./public/images/logo-mobile.png" alt="Logo">
+          <h2 style="color: var(--text-main);">raisul<span style="color: #10b981;">.ai</span></h2>
         </div>
         <div class="footer-links">
           <a href="/index.html#content">Knowledge Hub</a>

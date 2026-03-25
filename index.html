@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.447.0"></script>
 
     <link rel="stylesheet" href="./style.css" />
 
@@ -30,7 +30,8 @@
       <!-- Sidebar Navigation -->
       <aside class="sidebar">
         <div class="sidebar-logo">
-           <h2 style="color: white;">raisul<span style="color: white;">.ai</span></h2>
+           <img src="./public/images/logo-mobile.png" class="desktop-logo" alt="Logo">
+           <h2 style="color: white; margin: 0;">raisul<span style="color: #10b981;">.ai</span></h2>
         </div>
         
         <nav class="nav-menu">
@@ -128,7 +129,7 @@
           <!-- Brand logo and new inline links on mobile -->
           <div class="top-nav-brand">
             <a href="/index.html" style="display: flex; align-items: center; text-decoration: none;">
-              <img src="./public/images/logo-mobile.png" alt="raisul.ai logo" style="width: 44px; height: 44px; object-fit: contain; border-radius: 0;" class="mobile-brand-logo" />
+              <img src="./public/images/logo-mobile.png" alt="raisul.ai logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 0;" class="mobile-brand-logo" />
             </a>
             <nav class="mobile-top-links">
               <a href="/index.html">Home</a>
@@ -463,8 +464,8 @@
                 </div>
              </a>
              <a href="./blog.html" style="text-decoration: none; display: block; height: 100%;">
-                <div class="card" style="padding:1.25rem; border-top: 4px solid #0000FF; height: 100%;">
-                   <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="book-open" style="color:#0000FF;"></i> Blog</h4>
+                <div class="card" style="padding:1.25rem; border-top: 4px solid #10b981; height: 100%;">
+                   <h4 style="font-size: 0.95rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="book-open" style="color:#10b981;"></i> Blog</h4>
                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">Complete articles & guides.</p>
                 </div>
              </a>
@@ -618,8 +619,11 @@
             <i data-lucide="arrow-up" style="width:18px; height:18px;"></i>
           </button>
         </div>
-        <div style="padding: 1rem 0; text-align: center; border-top: 1px solid var(--border-color); width: 100%;">
-          <p style="font-weight: 800; font-size: 2.25rem; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.5px;">raisul.ai</p>
+        <div style="padding: 1.5rem 0; text-align: center; border-top: 1px solid var(--border-color); width: 100%;">
+          <div class="footer-logo">
+            <img src="./public/images/logo-mobile.png" alt="Logo">
+            <h2 style="color: var(--text-main);">raisul<span style="color: #10b981;">.ai</span></h2>
+          </div>
           <p style="font-size: 0.85rem; color: var(--text-muted); opacity: 0.8;">© 2026 S M Raisul Islam. All rights reserved.</p>
         </div>
       </footer>
