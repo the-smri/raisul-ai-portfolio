@@ -46,10 +46,11 @@ function initializeThemeToggle() {
         localStorage.setItem('theme', newTheme);
       } catch (e) {}
       updateThemeIcons(newTheme);
-
+      /*
       if (document.querySelector(".card")) animate(".card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
       if (document.querySelector(".b-card")) animate(".b-card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
       if (document.querySelector(".v-card")) animate(".v-card", { scale: [0.98, 1], opacity: [0.9, 1] }, { duration: 0.3 });
+      */
     });
   }
 }
@@ -69,14 +70,17 @@ function updateThemeIcons(theme) {
 // ==========================================================================
 
 // 1. Initial Entrances
+/*
 if (document.querySelector(".sidebar")) {
   animate(".sidebar", { x: [-100, 0], opacity: [0, 1] }, { duration: 0.8, easing: "ease-out" });
 }
 if (document.querySelector(".dashboard-header")) {
   animate(".dashboard-header", { y: [-50, 0], opacity: [0, 1] }, { duration: 0.8, delay: 0.2 });
 }
+*/
 
 // Hero Section Staggered Entrance
+/*
 if (document.querySelector("#home")) {
   inView("#home", ({ target }) => {
     animate(".hero-badge", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.1 });
@@ -88,6 +92,7 @@ if (document.querySelector("#home")) {
     animate(".hero-illustration-wrapper", { opacity: [0, 1], scale: [0.8, 1], rotate: [-10, 0] }, { duration: 1, delay: 0.3 });
   });
 }
+*/
 
 // 2. Scroll-Triggered Native Reveals (Slide & Zoom)
 const addScrollAnimation = (selector, initialStyle, keyframes) => {
@@ -111,9 +116,11 @@ const addScrollAnimation = (selector, initialStyle, keyframes) => {
   };
 
   window.addEventListener("scroll", checkScroll, { passive: true });
-  setTimeout(checkScroll, 100);
+  /* setTimeout(checkScroll, 100); */
 };
 
+// Scroll animations disabled
+/*
 // 1. Headings come from left
 addScrollAnimation(".section-title", { opacity: "0", transform: "translateX(-50px)" }, { opacity: [0, 1], x: [-50, 0] });
 
@@ -125,8 +132,10 @@ addScrollAnimation(".about-grid div, .stat-value, .stat-label", { opacity: "0", 
 
 // 4. Footer Entrance
 addScrollAnimation(".dashboard-footer-main", { opacity: "0", transform: "translateY(50px)" }, { opacity: [0, 1], y: [50, 0] });
+*/
 
-// 4. Hover Micro-interactions (Programmatic)
+// 4. Hover Micro-interactions (Programmatic) - Disabled
+/*
 document.querySelectorAll(".card:not(.hero-card), .gallery-item").forEach(element => {
   element.addEventListener("mouseenter", () => {
     animate(element, { scale: 1.02, y: -5 }, { duration: 0.3 });
@@ -135,6 +144,7 @@ document.querySelectorAll(".card:not(.hero-card), .gallery-item").forEach(elemen
     animate(element, { scale: 1, y: 0 }, { duration: 0.3 });
   });
 });
+*/
 
 // ==========================================================================
 // Navigation & Core Logic
@@ -216,11 +226,15 @@ filterBtns.forEach(btn => {
         // Show item
         item.style.display = 'flex';
         item.dataset.hiding = 'false';
+        /*
         animate(
           item, 
           { opacity: [0, 1], scale: [0.9, 1], y: [20, 0] }, 
           { duration: 0.4, easing: "ease-out" }
         );
+        */
+        item.style.opacity = '1';
+        item.style.transform = 'none';
         
         // Re-trigger progress bar animation
         const fill = item.querySelector('.progress-fill');
@@ -234,33 +248,27 @@ filterBtns.forEach(btn => {
       } else {
         // Hide item
         item.dataset.hiding = 'true';
-        animate(item, { opacity: 0, scale: 0.95, y: 10 }, { duration: 0.2 });
+        /* animate(item, { opacity: 0, scale: 0.95, y: 10 }, { duration: 0.2 }); */
+        item.style.display = 'none';
+        /*
         setTimeout(() => {
           if (item.dataset.hiding === 'true') {
             item.style.display = 'none';
           }
         }, 200);
+        */
       }
     });
   });
 });
 
-// Update the initial progress bar reveal to store the target width
-if (document.querySelector('.progress-bar')) {
-  inView('.progress-bar', ({ target }) => {
-    const fill = target.querySelector('.progress-fill');
-    if (fill) {
-      if (!fill.getAttribute('data-target-width')) {
-        fill.setAttribute('data-target-width', fill.style.width);
-      }
-      const targetWidth = fill.getAttribute('data-target-width');
-      fill.style.width = '0%';
-      setTimeout(() => {
-        fill.style.width = targetWidth;
-      }, 200);
-    }
-  });
-}
+// Initialize progress bars without animation
+document.querySelectorAll('.progress-fill').forEach(fill => {
+  if (!fill.getAttribute('data-target-width')) {
+    fill.setAttribute('data-target-width', fill.style.width);
+  }
+  fill.style.width = fill.getAttribute('data-target-width');
+});
 
 // Initialize Lucide Icons
 if (window.lucide) {

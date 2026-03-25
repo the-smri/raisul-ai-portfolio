@@ -109,7 +109,7 @@
             box-sizing: border-box !important;
             backdrop-filter: blur(10px) !important;
             -webkit-backdrop-filter: blur(10px) !important;
-            transition: all 0.3s ease !important;
+            transition: none !important;
           }
           @media (max-width: 768px) {
             .dashboard-header.sticky-header {
@@ -166,20 +166,20 @@
               <p class="hero-intro" style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.5;">I build <strong>AI-powered tools</strong>, teach <strong>500+ students</strong>, and create content that makes technology accessible — all from Bangladesh.</p>
               <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.5;">Software Engineering graduate from Zhengzhou University · NASA ACCP Facilitator · YouTube Educator · Aspiring Computer Vision Researcher.</p>
               <div class="hero-highlights hero-highlights-grid" style="margin-bottom: 2rem;">
-                <div style="display:flex; align-items:center; gap: 0.3rem; font-size: 0.95rem;">
-                  <i data-lucide="map-pin" style="color:#10b981; width:18px;"></i>
-                  <span>Cumilla, Bangladesh</span>
+                <div style="display:flex; align-items:center; gap: 0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="map-pin" style="color:#2563eb; width:22px; height:22px;"></i>
+                  <span>Daudkandi, Cumilla, Bangladesh</span>
                 </div>
-                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
-                  <i data-lucide="graduation-cap" style="color:#10b981; width:18px;"></i>
+                <div style="display:flex; align-items:center; gap:0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="graduation-cap" style="color:#f97316; width:22px; height:22px;"></i>
                   <span>B.Eng Software Engineering</span>
                 </div>
-                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
-                  <i data-lucide="target" style="color:#10b981; width:18px;"></i>
+                <div style="display:flex; align-items:center; gap:0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="target" style="color:#8b5cf6; width:22px; height:22px;"></i>
                   <span>Goal: Computer Vision Researcher</span>
                 </div>
-                <div style="display:flex; align-items:center; gap:0.5rem; font-size: 0.95rem;">
-                  <i data-lucide="award" style="color:#10b981; width:18px;"></i>
+                <div style="display:flex; align-items:center; gap:0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="award" style="color:#06b6d4; width:22px; height:22px;"></i>
                   <span>5+ Years in Education</span>
                 </div>
               </div>
@@ -399,51 +399,55 @@
             <section id="teaching" class="dashboard-section">
               <h2 class="section-title"><i data-lucide="graduation-cap"></i> Academy & Education</h2>
               <div class="card card-purple" style="margin-bottom: 1.5rem; padding: 2rem;">
-                <div style="margin-bottom: 1.5rem; border-left: 3px solid #3b82f6; padding-left: 1rem;">
-                  <h4 style="font-size:0.95rem;">B. Eng. in Software Engineering</h4>
-                  <p style="font-size:0.85rem; font-weight: 600;">Zhengzhou University, China</p>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">2018 - 2023</p>
-                </div>
+                <div class="timeline-container">
+                  <div class="timeline-item" style="--accent-color: #3b82f6;">
+                    <h4 style="font-size:0.95rem;">B. Eng. in Software Engineering</h4>
+                    <p style="font-size:0.85rem; font-weight: 600;">Zhengzhou University, China</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">2018 - 2023</p>
+                  </div>
 
-                <div style="margin-bottom: 1.5rem; border-left: 3px solid #f59e0b; padding-left: 1rem;">
-                  <h4 style="font-size:0.95rem;">H.S.C in Science</h4>
-                  <p style="font-size:0.85rem; font-weight: 600;">Dr. Khandaker Mosharraf Hossain College</p>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">2015 - 2017</p>
-                </div>
+                  <div class="timeline-item" style="--accent-color: #f59e0b;">
+                    <h4 style="font-size:0.95rem;">H.S.C in Science</h4>
+                    <p style="font-size:0.85rem; font-weight: 600;">Dr. Khandaker Mosharraf Hossain College</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">2015 - 2017</p>
+                  </div>
 
-                <div style="margin-bottom: 0; border-left: 3px solid #10b981; padding-left: 1rem;">
-                  <h4 style="font-size:0.95rem;">S.S.C. in General Science</h4>
-                  <p style="font-size:0.85rem; font-weight: 600;">Shahid Nagar M.A. Jalil High School</p>
-                  <p style="font-size:0.8rem; color:var(--text-muted);">2010 - 2015</p>
+                  <div class="timeline-item" style="--accent-color: #10b981;">
+                    <h4 style="font-size:0.95rem;">S.S.C. in General Science</h4>
+                    <p style="font-size:0.85rem; font-weight: 600;">Shahid Nagar M.A. Jalil High School</p>
+                    <p style="font-size:0.8rem; color:var(--text-muted);">2010 - 2015</p>
+                  </div>
                 </div>
               </div>
 
               <h2 class="section-title"><i data-lucide="briefcase"></i> Professional Roles</h2>
               <div class="card card-cyan" style="padding: 2rem;">
-                <div style="margin-bottom: 2rem; border-left: 3px solid #10b981; padding-left: 1rem;">
-                  <h4 style="font-size:1rem">Assistant Vice Principal</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">Reaz Public School | 2023 - Present</p>
-                  <p style="font-size:0.85rem;">Overseeing administrative operations and spearheading the STEM curriculum integration across secondary grades.</p>
-                </div>
-                <div style="margin-bottom: 2rem; border-left: 3px solid #3b82f6; padding-left: 1rem;">
-                  <h4 style="font-size:1rem">Lead Instructor</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">Noor Academy | 2024 - Present</p>
-                  <p style="font-size:0.85rem;">Building a community of logic-driven learners. Developed proprietary "Math-Easy" methodology for competitive exams.</p>
-                </div>
-
-                <div style="margin-bottom: 2rem; border-left: 3px solid #0B3D91; padding-left: 1rem;">
-                  <h4 style="font-size:1rem; display:flex; align-items:center; gap:0.5rem;">Facilitator – NASA ACCP Program <span class="nasa-badge">NASA Astro Camp</span></h4>
-                 <p style="font-size:0.85rem;">Guided students in NASA-affiliated projects and STEM learning initiatives.</p>
-                  <div style="margin-top: 0.5rem; display:flex; align-items:center; gap:0.4rem;">
-                    <i data-lucide="award" class="nasa-icon"></i>
-                    <span style="font-size: 0.75rem; font-weight:700;">EDP Certificate – NASA ACCP (2025)</span>
+                <div class="timeline-container">
+                  <div class="timeline-item" style="--accent-color: #10b981;">
+                    <h4 style="font-size:1rem">Assistant Vice Principal</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">Reaz Public School | 2023 - Present</p>
+                    <p style="font-size:0.85rem;">Overseeing administrative operations and spearheading the STEM curriculum integration across secondary grades.</p>
                   </div>
-                </div>
+                  <div class="timeline-item" style="--accent-color: #3b82f6;">
+                    <h4 style="font-size:1rem">Lead Instructor</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">Noor Academy | 2024 - Present</p>
+                    <p style="font-size:0.85rem;">Building a community of logic-driven learners. Developed proprietary "Math-Easy" methodology for competitive exams.</p>
+                  </div>
 
-                <div style="margin-bottom: 2rem; border-left: 3px solid #FF0000; padding-left: 1rem;">
-                  <h4 style="font-size:1rem">Content Creator</h4>
-                  <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">raisul.ai (YT Channel) | 2020 - Present</p>
-                  <p style="font-size:0.85rem;">Created educational videos on ICT and Mathematics, reaching over 20,000 learners on YouTube.</p>
+                  <div class="timeline-item" style="--accent-color: #0B3D91;">
+                    <h4 style="font-size:1rem; display:flex; align-items:center; gap:0.5rem;">Facilitator – NASA ACCP Program <span class="nasa-badge">NASA Astro Camp</span></h4>
+                    <p style="font-size:0.85rem;">Guided students in NASA-affiliated projects and STEM learning initiatives.</p>
+                    <div style="margin-top: 0.5rem; display:flex; align-items:center; gap:0.4rem;">
+                      <i data-lucide="award" class="nasa-icon"></i>
+                      <span style="font-size: 0.75rem; font-weight:700;">EDP Certificate – NASA ACCP (2025)</span>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" style="--accent-color: #FF0000;">
+                    <h4 style="font-size:1rem">Content Creator</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.25rem;">raisul.ai (YT Channel) | 2020 - Present</p>
+                    <p style="font-size:0.85rem;">Created educational videos on ICT and Mathematics, reaching over 20,000 learners on YouTube.</p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -597,9 +601,9 @@
                </div>
                <div class="card location-card" style="color:white;">
                   <h4>Location</h4>
-                  <p style="font-size: 0.85rem; opacity:0.8; margin-top:0.5rem;">Daudkandi<br/>Cumilla, Bangladesh</p>
-                  <div style="margin-top:1rem; height:80px; width:100%; background:rgba(255,255,255,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center;">
-                    <i data-lucide="map" style="opacity:0.5;"></i>
+                  <p style="font-size: 0.85rem; opacity:1; margin-top:0.5rem; color: var(--text-main);">Daudkandi<br/>Cumilla, Bangladesh</p>
+                  <div style="margin-top:1rem; height:80px; width:100%; background:rgba(0,0,0,0.05); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+                    <i data-lucide="map" style="color:var(--primary); opacity:0.6;"></i>
                   </div>
                </div>
              </div>
