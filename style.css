@@ -1552,15 +1552,17 @@ img {
 
     /* Sticky header on mobile: floating curved rectangle */
     .sticky-header {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        padding: 0.65rem 1rem;
-        border-radius: 50px;
-        top: 1rem; /* Creates gap at the top */
-        margin-bottom: 1rem; /* Creates gap with the bottom section */
+        position: sticky !important;
+        top: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        padding: 0.65rem 1rem !important;
+        border-radius: 0 0 20px 20px !important;
+        margin-bottom: 0 !important;
         border: 1px solid var(--border-color);
         box-shadow: var(--shadow-soft);
+        z-index: 9999 !important;
     }
 
     /* Hide Home/Blog/Tutorials on mobile */
