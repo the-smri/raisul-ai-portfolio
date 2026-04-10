@@ -27,14 +27,20 @@ function initializeThemeToggle() {
   sunIcon = document.querySelector('.sun-icon');
   moonIcon = document.querySelector('.moon-icon');
 
-  savedTheme = 'light';
+  savedTheme = 'dark';
   try {
-    savedTheme = localStorage.getItem('theme') || 'light';
+    savedTheme = localStorage.getItem('theme') || 'dark';
   } catch (e) {
-    console.warn("localStorage not available, defaulting to light theme.");
+    console.warn("localStorage not available, defaulting to dark theme.");
   }
   body.setAttribute('data-theme', savedTheme);
   updateThemeIcons(savedTheme);
+  // Prefer dark on first visit
+  try {
+    if (!localStorage.getItem('theme')) {
+      localStorage.setItem('theme', 'dark');
+    }
+  } catch (e) {}
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
@@ -161,6 +167,19 @@ const mobNavMap = {
   'mob-hire': 'contact',
 };
 const mobNavItems = document.querySelectorAll('.mob-nav-item');
+
+// Ensure mobile "home" icon navigates to main index page on small screens
+const mobHome = document.getElementById('mob-home');
+if (mobHome) {
+  mobHome.addEventListener('click', (e) => {
+    const isMobile = window.innerWidth <= 768;
+    const path = window.location.pathname;
+    if (isMobile && path !== '/' && path !== '/index.html') {
+      e.preventDefault();
+      window.location.href = '/index.html#home';
+    }
+  }, { passive: false });
+}
 
 window.addEventListener('scroll', () => {
     let current = "";

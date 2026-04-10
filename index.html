@@ -24,7 +24,7 @@
       }
     </script>
   </head>
-  <body data-theme="light">
+  <body data-theme="dark">
 
     <div class="app-wrapper">
       <!-- Sidebar Navigation -->
@@ -72,7 +72,7 @@
 
       <!-- Mobile Bottom Navigation (5 items) - outside sidebar so it's always visible -->
       <nav class="mobile-bottom-nav">
-        <a href="#home" class="mob-nav-item active" id="mob-home">
+        <a href="/index.html#home" class="mob-nav-item active" id="mob-home">
           <i data-lucide="home"></i>
           <span>Home</span>
         </a>
@@ -98,24 +98,32 @@
       <main class="main-content">
         <style>
           .top-nav-links a:hover { color: var(--primary) !important; }
+          /* Make header fixed so it behaves like other pages (blog/tutorials) */
           .dashboard-header.sticky-header {
-            position: sticky !important;
-            margin: 1rem auto !important;
+            position: fixed !important;
+            top: 1rem !important;
+            left: calc(var(--sidebar-width) + 2rem) !important;
+            right: 2rem !important;
             z-index: 1000 !important;
             border-radius: 16px !important;
             padding: 0.75rem 2.5rem !important;
             border: 1px solid var(--border-color) !important;
             box-shadow: var(--shadow-soft) !important;
-            width: 100% !important;
+            width: auto !important;
             box-sizing: border-box !important;
             backdrop-filter: blur(10px) !important;
             -webkit-backdrop-filter: blur(10px) !important;
             transition: none !important;
           }
+          .main-content { padding-top: 5.5rem !important; }
           @media (max-width: 768px) {
             .dashboard-header.sticky-header {
+              left: 1rem !important;
+              right: 1rem !important;
+              width: calc(100% - 2rem) !important;
               padding: 0.75rem !important;
             }
+            .main-content { padding-top: 5rem !important; }
           }
           body[data-theme='light'] .dashboard-header.sticky-header {
             background: rgba(255, 255, 255, 0.9) !important;
