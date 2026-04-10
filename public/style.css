@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Dashboard Design System - Raisul.ai
+   ========================================================================== */
+
+:root {
+    /* Semantic Tokens - Modern Green Theme */
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --primary-light: #34d399;
+    --secondary: #064e3b;
+    --accent-yellow: #f59e0b;
+    --accent-orange: #f97316;
+    --accent-blue: #3b82f6;
+    --accent-pink: #ec4899;
+    --red: #ff0000;
+
+    /* Sidebar Gradient - Requested Blue Theme */
+    --sidebar-gradient: linear-gradient(180deg, #1A05A2 10%, #4C8CE4 90%);
+
+    /* Hero Gradient */
+    --hero-gradient: linear-gradient(145deg, #e6f4ff 0%, #fdf4e8 100%);
+
+    /* Light Mode Tokens - Green Surface */
+    --bg-main: #22946e;
+    --bg-card: #ffffff;
+    --bg-sidebar: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: rgba(0, 0, 0, 0.05);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    /* Common */
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+    --sidebar-width: 260px;
+    --transition: none;
+    --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+[data-theme='dark'] {
+    --bg-main: #050816;
+    --bg-card: #0b1220;
+    --bg-sidebar: #050816;
+    --text-main: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.75);
+    --border-color: rgba(255, 255, 255, 0.12);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.7);
+    --primary: #3b82f6;
+    --sidebar-gradient: linear-gradient(180deg, #07152a 0%, #050816 100%);
+    --hero-gradient: var(--bg-card);
+}
+
+/* ...rest of original styles... */
+
+/* Shortened for scaffold. Keep full original style.css in repo root for reference. */

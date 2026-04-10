@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo-mobile.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>raisul.ai | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.447.0/dist/umd/lucide.js"></script>
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Import Map for Static Module Support -->
+    <script type="importmap">
+      {
+        "imports": {
+          "motion": "https://cdn.jsdelivr.net/npm/motion@12.38.0/+esm"
+        }
+      }
+    </script>
+  </head>
+  <body data-theme="light">
+
+    <div class="app-wrapper">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+           <img src="/images/logo-mobile.png" class="desktop-logo" alt="Logo">
+           <h2 style="color: white; margin: 0;">raisul<span style="color: #10b981;">.ai</span></h2>
+        </div>
+        
+        <nav class="nav-menu">
+          <a href="#home" class="nav-item active">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#about" class="nav-item">
+            <i data-lucide="user"></i>
+            <span>My Story</span>
+          </a>
+          <a href="#skills" class="nav-item">
+            <i data-lucide="zap"></i>
+            <span>Technical Skills</span>
+          </a>
+          <a href="#projects" class="nav-item">
+            <i data-lucide="folder-kanban"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#teaching" class="nav-item">
+            <i data-lucide="graduation-cap"></i>
+            <span>Academy & Ed</span>
+          </a>
+          <a href="#content" class="nav-item">
+            <i data-lucide="video"></i>
+            <span>Digital Content</span>
+          </a>
+          <a href="#contact" class="nav-item">
+            <i data-lucide="mail"></i>
+            <span>Connect</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <!-- Relocated to Header Settings -->
+        </div>
+      </aside>
+
+      <!-- Mobile Bottom Navigation (5 items) - outside sidebar so it's always visible -->
+      <nav class="mobile-bottom-nav">
+        <a href="#home" class="mob-nav-item active" id="mob-home">
+          <i data-lucide="home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#skills" class="mob-nav-item" id="mob-skills">
+          <i data-lucide="zap"></i>
+          <span>Skills</span>
+        </a>
+        <a href="#teaching" class="mob-nav-item" id="mob-education">
+          <i data-lucide="graduation-cap"></i>
+          <span>Education</span>
+        </a>
+        <a href="#content" class="mob-nav-item" id="mob-content">
+          <i data-lucide="video"></i>
+          <span>Content</span>
+        </a>
+        <a href="#contact" class="mob-nav-item mob-nav-hire" id="mob-hire">
+          <i data-lucide="briefcase"></i>
+          <span>Hire Me</span>
+        </a>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <style>
+          .top-nav-links a:hover { color: var(--primary) !important; }
+          .dashboard-header.sticky-header {
+            position: sticky !important;
+            margin: 1rem auto !important;
+            z-index: 1000 !important;
+            border-radius: 16px !important;
+            padding: 0.75rem 2.5rem !important;
+            border: 1px solid var(--border-color) !important;
+            box-shadow: var(--shadow-soft) !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            transition: none !important;
+          }
+          @media (max-width: 768px) {
+            .dashboard-header.sticky-header {
+              padding: 0.75rem !important;
+            }
+          }
+          body[data-theme='light'] .dashboard-header.sticky-header {
+            background: rgba(255, 255, 255, 0.9) !important;
+          }
+          body[data-theme='dark'] .dashboard-header.sticky-header {
+            background: rgba(11, 18, 32, 0.9) !important;
+          }
+        </style>
+        <header class="dashboard-header sticky-header">
+
+          <!-- Brand logo and new inline links on mobile -->
+          <div class="top-nav-brand">
+            <a href="/index.html" style="display: flex; align-items: center; text-decoration: none;">
+              <img src="/images/logo-mobile.png" alt="raisul.ai logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 0;" class="mobile-brand-logo" />
+            </a>
+            <nav class="mobile-top-links">
+              <a href="/index.html">Home</a>
+              <a href="/blog.html">Blog</a>
+              <a href="/tutorials.html">Tutorials</a>
+            </nav>
+          </div>
+
+          <!-- Desktop nav links: hidden on mobile -->
+          <nav class="top-nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/tutorials.html">Tutorials</a>
+            <a href="#contact" class="btn-hire-nav">Hire Me</a>
+          </nav>
+
+          <!-- Theme toggle + avatar: always visible -->
+          <div class="header-actions">
+            <button class="action-btn theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+              <i data-lucide="sun" class="sun-icon"></i>
+              <i data-lucide="moon" class="moon-icon" style="display:none"></i>
+            </button>
+            <div class="user-profile" style="padding: 4px;">
+              <img src="/images/profile.jpg" alt="Raisul" class="user-avatar" style="width: 36px; height: 36px; border-radius: 50%;" />
+            </div>
+          </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="dashboard-section">
+          <div class="card hero-card">
+            <div class="hero-text">
+              <span class="hero-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--text-main);">Software Engineer | Educator | AI Enthusiast</span>
+              <h1>I'm <span class="highlight">S M Raisul Islam</span></h1>
+              <p class="hero-intro" style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.5;">I build <strong>AI-powered tools</strong>, teach <strong>500+ students</strong>, and create content that makes technology accessible — all from Bangladesh.</p>
+              <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.5;">Software Engineering graduate from Zhengzhou University · NASA ACCP Facilitator · YouTube Educator · Aspiring Computer Vision Researcher.</p>
+              <div class="hero-highlights hero-highlights-grid" style="margin-bottom: 2rem;">
+                <div style="display:flex; align-items:center; gap: 0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="map-pin" style="color:#2563eb; width:22px; height:22px;"></i>
+                  <span>Daudkandi, Cumilla, Bangladesh</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="graduation-cap" style="color:#f97316; width:22px; height:22px;"></i>
+                  <span>B.Eng Software Engineering</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="target" style="color:#8b5cf6; width:22px; height:22px;"></i>
+                  <span>Goal: Computer Vision Researcher</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:0.6rem; font-size: 0.95rem;">
+                  <i data-lucide="award" style="color:#06b6d4; width:22px; height:22px;"></i>
+                  <span>5+ Years in Education</span>
+                </div>
+              </div>
+              
+              <div class="hero-cta-row">
+                <a href="#contact" class="btn btn-primary btn-hire-hero">🚀 Hire Me</a>
+                <button onclick="downloadCV()" class="btn btn-outline-hero">Download CV</button>
+                <div class="social-links-hero" style="display:flex; gap: 1rem;">
+                  <a href="https://github.com/the-smri" target="_blank" title="GitHub" class="social-link-github"><i data-lucide="github"></i></a>
+                  <a href="https://www.linkedin.com/in/the-raisul/" target="_blank" title="LinkedIn" class="social-link-linkedin"><i data-lucide="linkedin"></i></a>
+                  <a href="https://www.facebook.com/the.smri/" target="_blank" title="Facebook" class="social-link-facebook"><i data-lucide="facebook"></i></a>
+                  <a href="https://www.youtube.com/@raisulallinfo" target="_blank" title="YouTube" class="social-link-youtube"><i data-lucide="youtube"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="hero-illustration-wrapper">
+              <div class="bg-shape"></div>
+              <img src="/images/profile.jpg" alt="S M Raisul Islam" class="hero-illustration" style="border-radius: 100%; box-shadow: 0 40px 80px rgba(0,0,0,0.1);" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Further sections remain the same in the copied HTML... -->
+      </main>
+    </div>
+
+    <script>
+      // Initialize lucide icons
+      if (window.lucide) window.lucide.replace()
+    </script>
+  </body>
+</html>
