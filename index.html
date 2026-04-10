@@ -100,30 +100,35 @@
           .top-nav-links a:hover { color: var(--primary) !important; }
           /* Make header fixed so it behaves like other pages (blog/tutorials) */
           .dashboard-header.sticky-header {
-            position: fixed !important;
-            top: 1rem !important;
-            left: calc(var(--sidebar-width) + 2rem) !important;
-            right: 2rem !important;
+            position: sticky !important;
+            top: 0 !important;
+            margin-top: 0 !important;
             z-index: 1000 !important;
-            border-radius: 16px !important;
+            border-radius: 0 0 20px 20px !important;
             padding: 0.75rem 2.5rem !important;
             border: 1px solid var(--border-color) !important;
             box-shadow: var(--shadow-soft) !important;
-            width: auto !important;
+            width: 100% !important;
             box-sizing: border-box !important;
             backdrop-filter: blur(10px) !important;
             -webkit-backdrop-filter: blur(10px) !important;
             transition: none !important;
           }
-          .main-content { padding-top: 5.5rem !important; }
+          .top-nav-brand { display: none !important; }
+          .top-nav-links {
+            display: flex !important;
+            gap: 2rem !important;
+            margin: 0 auto !important;
+            justify-content: center !important;
+          }
+          .main-content { padding-top: 1rem !important; }
           @media (max-width: 768px) {
+            .top-nav-brand { display: flex !important; }
+            .top-nav-links { display: none !important; }
             .dashboard-header.sticky-header {
-              left: 1rem !important;
-              right: 1rem !important;
-              width: calc(100% - 2rem) !important;
               padding: 0.75rem !important;
             }
-            .main-content { padding-top: 5rem !important; }
+            .main-content { padding-top: 0.5rem !important; }
           }
           body[data-theme='light'] .dashboard-header.sticky-header {
             background: rgba(255, 255, 255, 0.9) !important;
